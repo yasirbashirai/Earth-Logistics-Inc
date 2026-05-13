@@ -46,12 +46,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* Sub-headline (was the original H1) */}
-            <p className="mt-7 text-xl md:text-2xl lg:text-3xl font-display font-bold text-white leading-tight max-w-2xl">
-              Enterprise-grade freight, dispatched <span className="brand-gradient-text">24 / 7 / 365.</span>
-            </p>
-
-            <p className="mt-4 text-base md:text-lg text-blue-50/90 max-w-2xl leading-relaxed">
+            <p className="mt-7 text-base md:text-lg text-blue-50/90 max-w-2xl leading-relaxed">
               Freight brokerage trusted by US manufacturers, builders, growers and chemical
               shippers. Every trailer type. Every state. Every hour.
             </p>
