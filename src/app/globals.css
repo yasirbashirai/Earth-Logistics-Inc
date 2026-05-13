@@ -184,13 +184,16 @@ h1, h2, h3, h4, .font-display {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 1.1rem;
-  padding: 1.5rem;
+  padding: 1.75rem;
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .card:hover {
   transform: translateY(-4px);
   border-color: #bfdbfe;
   box-shadow: 0 30px 50px -28px rgba(3,84,225,0.4);
+}
+@media (max-width: 640px) {
+  .card { padding: 1.35rem; border-radius: 0.95rem; }
 }
 
 /* ============ FORMS ============ */
@@ -332,5 +335,7 @@ h1, h2, h3, h4, .font-display {
 /* ============ MOBILE TWEAKS ============ */
 @media (max-width: 640px) {
   .btn-primary, .btn-secondary, .btn-ghost-on-dark { padding: 0.95rem 1.4rem; font-size: 0.95rem; }
-  .card { padding: 1.25rem; }
 }
+
+/* Prevent text clip on small headings */
+h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }

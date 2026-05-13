@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1559717207-049db4eb1c7e?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1200&q=80"
                 alt="Earth Logistics dispatch operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

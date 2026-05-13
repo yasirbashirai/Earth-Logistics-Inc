@@ -21,7 +21,7 @@ export const services: Service[] = [
       "Standard 53' dry van trailers for palletized, floor-loaded and boxed freight — the workhorse of US LTL/FTL shipping.",
     long: "Earth Logistics Inc moves dry van freight every hour of every day. Our vetted carrier network operates 53' enclosed trailers across all 48 contiguous states with real-time tracking, secured load-bar service, and dedicated drop trailer programs for high-volume shippers. Whether you ship CPG, retail, industrial or e-commerce freight, we'll match your lane to a carrier we trust.",
     image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d3?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=1600&q=80",
     category: "Van",
     capabilities: [
       "53' dry van capacity nationwide",
@@ -87,7 +87,7 @@ export const services: Service[] = [
       "53' multi-temp reefer trailers with continuous tracking, temperature monitoring and FSMA-compliant carriers.",
     long: "Earth Logistics ships food, beverage, produce, pharma and temperature-sensitive chemicals in 53' refrigerated trailers ranging from frozen (-10°F) to climate-controlled (+70°F). All reefer carriers meet FSMA and Sanitary Transportation Rule requirements, and continuous temperature monitoring is available for high-value loads.",
     image:
-      "https://images.unsplash.com/photo-1568661276869-4d4b2f0d6c0a?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1605559911160-a3d95d213904?auto=format&fit=crop&w=1600&q=80",
     category: "Van",
     capabilities: [
       "Frozen, refrigerated and climate-controlled",
@@ -118,7 +118,7 @@ export const services: Service[] = [
       "Lowboy, double-drop, RGN and multi-axle trailers for excavators, dozers, cranes, transformers and over-dimensional cargo.",
     long: "Heavy haul is where Earth Logistics shines. From 35-ton excavators to oilfield modules and wind components, we coordinate lowboy, removable-gooseneck (RGN), perimeter-frame, dual-lane and multi-axle moves — including permits, route surveys, pilot cars and superload coordination. Use our heavy-haul quote calculator on the quote page to size your move in minutes.",
     image:
-      "https://images.unsplash.com/photo-1565024145557-a2f33dd0656d?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80",
     category: "Heavy",
     capabilities: [
       "Lowboy / RGN trailers",
@@ -180,7 +180,7 @@ export const services: Service[] = [
       "39'+ end dump and side dump trailers for aggregates, asphalt, demolition debris, sand and crushed stone.",
     long: "Earth Logistics' bulk division operates an active network of end dump and 39' heavy-bulk end dump trailers covering aggregates, asphalt, sand, gravel, soil and demolition debris. We coordinate sequencing for paving crews, mine haul, demolition cleanup and import/export bulk staging — with the dispatch responsiveness construction jobs demand.",
     image:
-      "https://images.unsplash.com/photo-1596189181363-58dcae8a14a3?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "39' heavy-bulk end dumps",
@@ -211,7 +211,7 @@ export const services: Service[] = [
       "Food-grade and industrial pneumatic tankers for cement, flour, sugar, plastic pellets, sand and chemical powders.",
     long: "Pneumatic transfer is its own specialty — and we book it daily. Earth Logistics dispatches food-grade and industrial pneumatic tankers (45'-50') for cement, fly ash, lime, sugar, flour, starch, plastic pellets, frac sand and dry chemicals. Carriers are vetted for blower equipment, wash-out compliance and unloading time windows.",
     image:
-      "https://images.unsplash.com/photo-1565017228812-fd3cbe6b13e6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "Food-grade & industrial pneumatic",
@@ -242,7 +242,7 @@ export const services: Service[] = [
       "DOT-407, DOT-406 and food-grade stainless tankers for chemical, fuel, edible oil and bulk liquid freight.",
     long: "Earth Logistics dispatches DOT-407 chemical tankers, DOT-406 fuel tankers and stainless food-grade tankers for edible oil, sweetener, dairy, juice concentrate and bulk water. All hazardous tanker moves are dispatched only through hazmat-certified, placarded carriers compliant with 49 CFR.",
     image:
-      "https://images.unsplash.com/photo-1601984776091-43fa12e2ce8e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "DOT-407 chemical tanker",

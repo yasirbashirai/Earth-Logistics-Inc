@@ -8,7 +8,6 @@ import {
   ShieldCheck,
   Star,
   BadgeCheck,
-  Sparkles,
   Building2,
   Factory,
   Tractor,
@@ -17,18 +16,17 @@ import {
   Car,
   ShoppingBag,
   FlaskConical,
-  ChevronRight,
   PlayCircle,
   MapPin,
   Briefcase,
 } from "lucide-react";
-import QuoteFormCompact from "@/components/QuoteFormCompact";
+import Hero from "@/components/Hero";
 import StatsRow from "@/components/StatsRow";
 import TrustBar from "@/components/TrustBar";
 import CtaStrip from "@/components/CtaStrip";
 import SectionHeader from "@/components/SectionHeader";
 import LaneTicker from "@/components/LaneTicker";
-import EquipmentShowcase from "@/components/EquipmentShowcase";
+import EquipmentBento from "@/components/EquipmentBento";
 import FaqAccordion from "@/components/FaqAccordion";
 import PartnerLogos from "@/components/PartnerLogos";
 import { testimonials } from "@/data/testimonials";
@@ -84,60 +82,7 @@ const homeFaqs = [
 export default function HomePage() {
   return (
     <>
-      {/* ============ HERO ============ */}
-      <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d3?auto=format&fit=crop&w=2000&q=80"
-            alt="American freight truck on highway"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 hero-overlay" />
-        </div>
-
-        <div className="container-page pt-14 md:pt-20 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center text-white">
-          <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 bg-white/12 border border-white/25 text-blue-100 text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" /> DOT-Authorized • FMCSA Registered • 24/7 Operations
-            </span>
-            <h1 className="font-display font-extrabold text-4xl md:text-6xl lg:text-7xl leading-[1.02] mt-5 tracking-tight">
-              Freight that <span className="text-brand-300">moves</span> <br className="hidden sm:block"/> on your schedule.
-            </h1>
-            <p className="mt-5 text-lg md:text-xl text-blue-50/95 max-w-xl">
-              Asset-based freight brokerage trusted by manufacturers, builders and shippers nationwide. Dry van, flatbed, reefer, heavy haul, bulk, hazmat — dispatched in minutes, 24/7.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/quote" className="btn-primary shine-on-hover">
-                Get Instant Quote <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href={company.phoneHref} className="btn-ghost-on-dark">
-                <Phone className="w-4 h-4" /> {company.phone}
-              </a>
-            </div>
-
-            {/* Floating mini-badges */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-              <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-soft"/> Live dispatch active</div>
-              <div className="flex items-center gap-2"><Star className="w-4 h-4 text-amber-400 fill-current"/> 5.0 rating from US shippers</div>
-              <div className="flex items-center gap-2"><BadgeCheck className="w-4 h-4 text-brand-300"/> $1.5M cargo coverage</div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5">
-            <QuoteFormCompact />
-          </div>
-        </div>
-
-        {/* Scroll cue */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-xs flex flex-col items-center gap-1 hidden md:flex">
-          <span className="uppercase tracking-widest text-[10px] font-bold">Scroll</span>
-          <div className="w-px h-8 bg-white/40" />
-        </div>
-      </section>
-
+      <Hero />
       <LaneTicker />
       <TrustBar />
 
@@ -213,19 +158,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ EQUIPMENT SHOWCASE ============ */}
-      <section className="section bg-slate-50">
-        <div className="container-page">
+      {/* ============ EQUIPMENT BENTO ============ */}
+      <section className="section bg-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-light opacity-50 pointer-events-none" />
+        <div className="container-page relative">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <SectionHeader
-              eyebrow="Equipment & services"
-              title="Every trailer type. One operations partner."
-              subtitle="Switch between equipment types to explore capabilities, industries served and lane coverage."
-            />
-            <Link href="/services" className="btn-outline self-start">All services <ArrowRight className="w-4 h-4"/></Link>
+            <div className="max-w-2xl">
+              <span className="eyebrow">Capacity at a glance</span>
+              <h2 className="section-title mt-2">
+                Every trailer type. <span className="brand-gradient-text">One dispatch desk.</span>
+              </h2>
+              <p className="mt-4 text-slate-600 text-lg">
+                Click any equipment type to see capabilities, industries served, and request a binding quote.
+              </p>
+            </div>
+            <Link href="/services" className="btn-outline self-start whitespace-nowrap">All services <ArrowRight className="w-4 h-4"/></Link>
           </div>
-          <div className="mt-10">
-            <EquipmentShowcase />
+          <div className="mt-12">
+            <EquipmentBento />
           </div>
         </div>
       </section>

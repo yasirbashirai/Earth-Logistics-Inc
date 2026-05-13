@@ -29,7 +29,7 @@ export default function CarriersPage() {
         eyebrow="Carrier program"
         title="Run with a brokerage that respects drivers."
         subtitle="Top-paying lanes. 24/7 dispatch. Quick pay. No forced dispatch. Apply in 5 minutes — onboarded in 48 hours."
-        image="https://images.unsplash.com/photo-1559717207-049db4eb1c7e?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1800&q=80"
       />
 
       <TrustBar />
