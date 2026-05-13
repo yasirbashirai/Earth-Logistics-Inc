@@ -82,7 +82,7 @@ export default function QuoteFormFull() {
           onClick={() => setTab("standard")}
           className={`flex-1 px-5 py-4 font-semibold text-sm flex items-center justify-center gap-2 ${
             tab === "standard"
-              ? "bg-[--color-brand-50] text-[--color-brand-700] border-b-2 border-[--color-brand-600]"
+              ? "bg-brand-50 text-brand-700 border-b-2 border-brand-600"
               : "text-slate-600 hover:bg-slate-50"
           }`}
         >
@@ -92,7 +92,7 @@ export default function QuoteFormFull() {
           onClick={() => setTab("heavy")}
           className={`flex-1 px-5 py-4 font-semibold text-sm flex items-center justify-center gap-2 ${
             tab === "heavy"
-              ? "bg-[--color-brand-50] text-[--color-brand-700] border-b-2 border-[--color-brand-600]"
+              ? "bg-brand-50 text-brand-700 border-b-2 border-brand-600"
               : "text-slate-600 hover:bg-slate-50"
           }`}
         >
@@ -159,7 +159,7 @@ export default function QuoteFormFull() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-slate-700 font-semibold">
-                <Ruler className="w-4 h-4 text-[--color-brand-600]" />
+                <Ruler className="w-4 h-4 text-brand-600" />
                 Load dimensions
               </div>
               <div className="grid grid-cols-3 gap-3">
@@ -222,7 +222,7 @@ export default function QuoteFormFull() {
 
             <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 self-start">
               <div className="flex items-center gap-2 text-slate-700 font-semibold">
-                <Calculator className="w-4 h-4 text-[--color-brand-600]" />
+                <Calculator className="w-4 h-4 text-brand-600" />
                 Live heavy-haul estimate
               </div>
               <p className="text-xs text-slate-500 mt-1">

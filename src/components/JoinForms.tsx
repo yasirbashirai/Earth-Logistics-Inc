@@ -93,7 +93,7 @@ export default function JoinForm({ variant }: { variant: Variant }) {
 
   return (
     <form onSubmit={submit} className="rounded-2xl bg-white p-6 md:p-8 shadow-xl border border-slate-200">
-      <h3 className="font-display text-2xl md:text-3xl font-extrabold text-[--color-brand-900]">{head.title}</h3>
+      <h3 className="font-display text-2xl md:text-3xl font-extrabold text-brand-900">{head.title}</h3>
       <p className="text-slate-600 mt-1">{head.subtitle}</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         {cfg.map((f) => (

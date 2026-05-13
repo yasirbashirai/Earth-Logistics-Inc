@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Shipper Tips",
     image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d3?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
   },
   {
     slug: "heavy-haul-permitting-guide",
@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Heavy Haul",
     image:
-      "https://images.unsplash.com/photo-1593696954577-ab3d39317b97?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1600&q=80",
   },
   {
     slug: "becoming-a-freight-agent-with-earth-logistics",

@@ -36,14 +36,14 @@ export default function BlogIndex() {
               </div>
               <div className="p-8 md:p-10 flex flex-col justify-center">
                 <span className="eyebrow">{hero.category}</span>
-                <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-2 text-[--color-brand-900]">{hero.title}</h2>
+                <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-2 text-brand-900">{hero.title}</h2>
                 <p className="mt-3 text-slate-600">{hero.excerpt}</p>
                 <div className="mt-5 flex items-center gap-5 text-xs text-slate-500">
                   <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5"/> {hero.date}</span>
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5"/> {hero.readTime}</span>
                   <span>By {hero.author}</span>
                 </div>
-                <span className="mt-5 inline-flex items-center gap-2 font-semibold text-[--color-brand-700] group-hover:gap-3 transition-all">
+                <span className="mt-5 inline-flex items-center gap-2 font-semibold text-brand-700 group-hover:gap-3 transition-all">
                   Read article <ArrowRight className="w-4 h-4"/>
                 </span>
               </div>
@@ -58,7 +58,7 @@ export default function BlogIndex() {
                 </div>
                 <div className="p-6">
                   <span className="eyebrow">{p.category}</span>
-                  <h3 className="font-display font-bold text-xl mt-2 text-[--color-brand-900]">{p.title}</h3>
+                  <h3 className="font-display font-bold text-xl mt-2 text-brand-900">{p.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{p.excerpt}</p>
                   <div className="mt-4 flex items-center gap-4 text-xs text-slate-500">
                     <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5"/> {p.date}</span>

@@ -6,7 +6,7 @@ import { services } from "@/data/services";
 
 export default function Footer() {
   return (
-    <footer className="bg-[--color-brand-900] text-slate-300 mt-20">
+    <footer className="bg-brand-900 text-slate-300 mt-20">
       <div className="container-page py-14 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <div className="flex items-center gap-3">
@@ -57,19 +57,19 @@ export default function Footer() {
           <h4 className="font-display font-bold text-white mb-4 text-sm uppercase tracking-wider">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 mt-0.5 text-[--color-brand-500]" />
+              <MapPin className="w-4 h-4 mt-0.5 text-brand-500" />
               <span>{company.address}</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-[--color-brand-500]" />
+              <Phone className="w-4 h-4 text-brand-500" />
               <a href={company.phoneHref} className="hover:text-white">{company.phone}</a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Mail className="w-4 h-4 text-[--color-brand-500]" />
+              <Mail className="w-4 h-4 text-brand-500" />
               <a href={company.emailHref} className="hover:text-white">{company.email}</a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Clock className="w-4 h-4 text-[--color-brand-500]" />
+              <Clock className="w-4 h-4 text-brand-500" />
               <span>Open 24 / 7 / 365</span>
             </li>
           </ul>

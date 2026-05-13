@@ -52,7 +52,7 @@ export default function CarriersPage() {
               ))}
             </div>
 
-            <div className="mt-10 rounded-2xl bg-[--color-brand-900] text-white p-8">
+            <div className="mt-10 rounded-2xl bg-brand-900 text-white p-8">
               <h3 className="font-display font-extrabold text-2xl">What you'll need to onboard</h3>
               <ul className="mt-4 space-y-2 text-slate-200 text-sm">
                 <li>• Active MC and DOT numbers</li>

@@ -33,6 +33,7 @@ html, body {
   color: var(--foreground);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, .font-display {
@@ -40,9 +41,12 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: -0.01em;
 }
 
-/* Brand gradient utilities */
+/* ============ BRAND GRADIENTS ============ */
 .brand-gradient {
   background-image: linear-gradient(135deg, #0354e1 0%, #0092ff 100%);
+}
+.brand-gradient-strong {
+  background-image: linear-gradient(135deg, #022f8a 0%, #0354e1 45%, #0092ff 100%);
 }
 .brand-gradient-text {
   background-image: linear-gradient(135deg, #0354e1 0%, #0092ff 100%);
@@ -54,146 +58,279 @@ h1, h2, h3, h4, .font-display {
   background-image: linear-gradient(135deg, #bbbabd 0%, #838b94 100%);
 }
 .ink-gradient {
-  background-image: linear-gradient(135deg, #0b1220 0%, #1f2a40 100%);
+  background-image: linear-gradient(135deg, #0a2540 0%, #1f2a40 100%);
 }
 .hero-overlay {
-  background: linear-gradient(120deg, rgba(10,37,64,0.92) 0%, rgba(3,84,225,0.78) 55%, rgba(0,146,255,0.55) 100%);
+  background:
+    radial-gradient(60% 80% at 0% 0%, rgba(0,146,255,0.35) 0%, transparent 60%),
+    radial-gradient(70% 90% at 100% 100%, rgba(3,84,225,0.45) 0%, transparent 65%),
+    linear-gradient(120deg, rgba(10,37,64,0.92) 0%, rgba(3,84,225,0.78) 55%, rgba(0,146,255,0.55) 100%);
+}
+.dark-overlay {
+  background: linear-gradient(180deg, rgba(10,37,64,0.55) 0%, rgba(10,37,64,0.85) 100%);
 }
 
-/* Soft section dividers */
+/* ============ LAYOUT ============ */
 .section {
-  padding-top: clamp(3.5rem, 6vw, 6rem);
-  padding-bottom: clamp(3.5rem, 6vw, 6rem);
+  padding-top: clamp(3.5rem, 6vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 6.5rem);
 }
-
 .container-page {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin-inline: auto;
   padding-inline: clamp(1rem, 3vw, 2rem);
 }
 
-/* Buttons */
+/* ============ BUTTONS — bolder & interactive ============ */
 .btn-primary {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: 0.65rem;
-  font-weight: 600;
+  gap: 0.55rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   color: white;
   background-image: linear-gradient(135deg, #0354e1 0%, #0092ff 100%);
-  box-shadow: 0 10px 25px -10px rgba(3,84,225,0.55);
-  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.25) inset,
+    0 12px 28px -10px rgba(3,84,225,0.65),
+    0 2px 6px rgba(3,84,225,0.35);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  border: 1px solid rgba(255,255,255,0.18);
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  box-shadow: 0 18px 35px -15px rgba(3,84,225,0.75);
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.08);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.3) inset,
+    0 22px 45px -12px rgba(3,84,225,0.85),
+    0 3px 8px rgba(3,84,225,0.45);
 }
+.btn-primary:active { transform: translateY(0) scale(0.99); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0a2540;
+  background: white;
+  border: 2px solid #0a2540;
+  box-shadow: 0 6px 18px -8px rgba(10,37,64,0.4);
+  transition: all .18s ease;
+}
+.btn-secondary:hover {
+  background: #0a2540;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(10,37,64,0.55);
+}
+
 .btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   padding: 0.85rem 1.5rem;
-  border-radius: 0.65rem;
-  font-weight: 600;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   color: #0354e1;
   background: white;
-  border: 1.5px solid #cbd5e1;
-  transition: all .15s ease;
+  border: 2px solid #cbd5e1;
+  transition: all .18s ease;
 }
 .btn-outline:hover {
   border-color: #0354e1;
   color: #022f8a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -10px rgba(3,84,225,0.35);
 }
+
 .btn-ghost-on-dark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: 0.65rem;
-  font-weight: 600;
+  gap: 0.55rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: white;
-  border: 1.5px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  transition: all .18s ease;
 }
 .btn-ghost-on-dark:hover {
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,0.7);
+  background: white;
+  color: #0354e1;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(255,255,255,0.35);
 }
 
-/* Card */
+/* ============ CARD ============ */
 .card {
   background: white;
   border: 1px solid #e5e7eb;
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   padding: 1.5rem;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: #bfdbfe;
-  box-shadow: 0 25px 40px -25px rgba(3,84,225,0.35);
+  box-shadow: 0 30px 50px -28px rgba(3,84,225,0.4);
 }
 
-/* Form */
+/* ============ FORMS ============ */
 .form-label {
   display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: #0b1220;
   margin-bottom: 0.4rem;
+  text-transform: uppercase;
 }
 .form-input, .form-select, .form-textarea {
   width: 100%;
   border: 1.5px solid #d4d6d9;
   background: white;
-  border-radius: 0.55rem;
-  padding: 0.7rem 0.85rem;
+  border-radius: 0.65rem;
+  padding: 0.78rem 0.9rem;
   font-size: 0.95rem;
   color: #0b1220;
-  transition: border-color .15s, box-shadow .15s;
+  transition: border-color .15s, box-shadow .15s, background .15s;
 }
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   outline: none;
   border-color: #0354e1;
-  box-shadow: 0 0 0 3px rgba(3,84,225,0.18);
+  box-shadow: 0 0 0 4px rgba(3,84,225,0.16);
+  background: #f8fbff;
 }
 .form-error { color: #b91c1c; font-size: 0.8rem; margin-top: 0.25rem; }
 
-/* Section header */
+/* ============ TYPOGRAPHY ACCENTS ============ */
 .eyebrow {
   display: inline-block;
   font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #0354e1;
 }
-
-/* Subtle pattern background */
-.bg-grid-light {
-  background-image:
-    linear-gradient(to right, rgba(15,23,42,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15,23,42,0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
+.eyebrow-light { color: #93c5fd; }
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #0a2540;
 }
 
-/* Animations */
+/* ============ PATTERNS / DECOR ============ */
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(15,23,42,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,23,42,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-radial-fade {
+  background: radial-gradient(ellipse at top, rgba(3,84,225,0.08) 0%, transparent 70%);
+}
+
+/* ============ ANIMATIONS ============ */
 @keyframes pulseSoft {
   0%, 100% { opacity: .7; }
   50% { opacity: 1; }
 }
 .animate-pulse-soft { animation: pulseSoft 2.6s ease-in-out infinite; }
 
-/* Marquee scroll for partners — minimal, non-spammy */
 @keyframes scrollX {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.scroll-track { animation: scrollX 35s linear infinite; }
+.scroll-track { animation: scrollX 38s linear infinite; }
+.scroll-track-fast { animation: scrollX 22s linear infinite; }
+
+@keyframes shine {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%) skewX(-20deg); }
+}
+.shine-on-hover { position: relative; overflow: hidden; }
+.shine-on-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  transition: transform .8s ease;
+  pointer-events: none;
+}
+.shine-on-hover:hover::after { transform: translateX(220%) skewX(-20deg); }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: floatY 4.5s ease-in-out infinite; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp .7s ease both; }
+
+/* ============ MEGA MENU ============ */
+.mega-panel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 0.5rem;
+  width: min(1180px, 96vw);
+  background: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 30px 80px -20px rgba(10,37,64,0.35);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.mega-panel.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============ MARQUEE FADE EDGES ============ */
+.fade-edges {
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+/* ============ MOBILE TWEAKS ============ */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary, .btn-ghost-on-dark { padding: 0.95rem 1.4rem; font-size: 0.95rem; }
+  .card { padding: 1.25rem; }
+}

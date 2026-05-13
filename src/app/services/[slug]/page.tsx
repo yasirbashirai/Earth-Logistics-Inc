@@ -51,9 +51,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="container-page py-3 text-xs text-slate-500 flex items-center gap-1">
-          <Link href="/" className="hover:text-[--color-brand-700]">Home</Link>
+          <Link href="/" className="hover:text-brand-700">Home</Link>
           <ChevronRight className="w-3 h-3" />
-          <Link href="/services" className="hover:text-[--color-brand-700]">Services</Link>
+          <Link href="/services" className="hover:text-brand-700">Services</Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-slate-700">{s.name}</span>
         </div>
@@ -63,33 +63,33 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
             <span className="eyebrow">Service overview</span>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold mt-2 text-[--color-brand-900]">
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold mt-2 text-brand-900">
               {s.name} freight, dispatched 24/7.
             </h2>
             <p className="mt-4 text-slate-700 leading-relaxed text-lg">{s.long}</p>
 
             <div className="mt-8">
-              <h3 className="font-display font-bold text-xl text-[--color-brand-900]">Capabilities</h3>
+              <h3 className="font-display font-bold text-xl text-brand-900">Capabilities</h3>
               <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {s.capabilities.map((c) => (
                   <li key={c} className="flex gap-2 text-slate-700 text-sm">
-                    <Check className="w-4 h-4 text-[--color-brand-600] mt-0.5 shrink-0" /> {c}
+                    <Check className="w-4 h-4 text-brand-600 mt-0.5 shrink-0" /> {c}
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="mt-8">
-              <h3 className="font-display font-bold text-xl text-[--color-brand-900]">Industries we serve with {s.name.toLowerCase()}</h3>
+              <h3 className="font-display font-bold text-xl text-brand-900">Industries we serve with {s.name.toLowerCase()}</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {s.industries.map((i) => (
-                  <span key={i} className="text-xs bg-[--color-brand-50] text-[--color-brand-700] font-semibold px-3 py-1.5 rounded-full border border-[--color-brand-100]">{i}</span>
+                  <span key={i} className="text-xs bg-brand-50 text-brand-700 font-semibold px-3 py-1.5 rounded-full border border-brand-100">{i}</span>
                 ))}
               </div>
             </div>
 
             <div className="mt-10">
-              <h3 className="font-display font-bold text-2xl text-[--color-brand-900]">Frequently asked questions</h3>
+              <h3 className="font-display font-bold text-2xl text-brand-900">Frequently asked questions</h3>
               <div className="mt-5 space-y-3">
                 {s.faqs.map((f) => (
                   <details key={f.q} className="rounded-xl border border-slate-200 bg-white p-5 group">

@@ -29,7 +29,7 @@ export default function QuoteFormCompact() {
 
   return (
     <form onSubmit={submit} className="rounded-2xl bg-white p-5 md:p-6 shadow-2xl border border-slate-200">
-      <h3 className="font-display text-xl font-extrabold text-[--color-brand-900]">Instant Freight Quote</h3>
+      <h3 className="font-display text-xl font-extrabold text-brand-900">Instant Freight Quote</h3>
       <p className="text-xs text-slate-500 mt-1">Reply in under 30 minutes. No spam, ever.</p>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>

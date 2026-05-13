@@ -27,7 +27,7 @@ export default function PageHero({
         <div className="absolute inset-0 hero-overlay" />
       </div>
       <div className="container-page py-20 md:py-28 text-white">
-        {eyebrow && <span className="eyebrow !text-[--color-brand-200]">{eyebrow}</span>}
+        {eyebrow && <span className="eyebrow text-brand-200!">{eyebrow}</span>}
         <h1 className="font-display font-extrabold text-3xl md:text-5xl lg:text-6xl leading-tight mt-3 max-w-4xl">
           {title}
         </h1>

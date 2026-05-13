@@ -33,9 +33,9 @@ export default function CoveragePage() {
             {regions.map((r) => (
               <article key={r.slug} id={r.slug} className="card scroll-mt-32">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-6 h-6 text-[--color-brand-600] mt-1" />
+                  <MapPin className="w-6 h-6 text-brand-600 mt-1" />
                   <div className="flex-1">
-                    <h2 className="font-display font-extrabold text-2xl text-[--color-brand-900]">{r.name}</h2>
+                    <h2 className="font-display font-extrabold text-2xl text-brand-900">{r.name}</h2>
                     <p className="mt-2 text-slate-700">{r.blurb}</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
@@ -51,7 +51,7 @@ export default function CoveragePage() {
                         <div className="text-xs uppercase tracking-wider font-bold text-slate-500">Primary freight hubs</div>
                         <ul className="mt-2 space-y-1 text-sm text-slate-700">
                           {r.hubs.map((h) => (
-                            <li key={h} className="flex items-center gap-1.5"><ChevronRight className="w-3 h-3 text-[--color-brand-500]"/> {h}</li>
+                            <li key={h} className="flex items-center gap-1.5"><ChevronRight className="w-3 h-3 text-brand-500"/> {h}</li>
                           ))}
                         </ul>
                       </div>

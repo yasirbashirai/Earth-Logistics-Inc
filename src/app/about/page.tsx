@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7">
             <span className="eyebrow">Who we are</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl mt-2 text-[--color-brand-900] leading-tight">
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl mt-2 text-brand-900 leading-tight">
               Built by operators. <br /> Run by professionals.
             </h2>
             <div className="mt-6 space-y-5 text-slate-700 leading-relaxed">
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </div>
           <div>
             <span className="eyebrow">Mission</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-2 text-[--color-brand-900]">
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl mt-2 text-brand-900">
               To make freight as predictable as the businesses that depend on it.
             </h2>
             <p className="mt-4 text-slate-700 leading-relaxed">
@@ -106,13 +106,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-[--color-brand-900] text-white">
+      <section className="section bg-brand-900 text-white">
         <div className="container-page">
           <SectionHeader light eyebrow="Credentials" title="A foundation of compliance and trust." />
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
             {["DOT Authorized","FMCSA Registered","BMC-84 Bonded","TIA Aligned","MCS-90 Network","$1.5M Cargo"].map((c) => (
               <div key={c} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
-                <Award className="w-7 h-7 mx-auto text-[--color-brand-300]" />
+                <Award className="w-7 h-7 mx-auto text-brand-300" />
                 <div className="mt-3 font-display font-bold text-sm">{c}</div>
               </div>
             ))}
@@ -124,7 +124,7 @@ export default function AboutPage() {
         <div className="container-page text-center">
           <SectionHeader eyebrow="Headquarters" title="Saint John, Indiana." center />
           <div className="mt-6 inline-flex items-center gap-2 text-slate-700 text-lg">
-            <MapPin className="w-5 h-5 text-[--color-brand-600]" />
+            <MapPin className="w-5 h-5 text-brand-600" />
             9401 Iris St, Saint John, IN 46373
           </div>
           <p className="mt-3 text-slate-500 max-w-xl mx-auto">

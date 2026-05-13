@@ -20,7 +20,7 @@ export default function CtaStrip({
               <p className="mt-2 text-blue-50/90 max-w-2xl">{subtitle}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link href="/quote" className="inline-flex items-center gap-2 bg-white text-[--color-brand-700] font-semibold px-6 py-3 rounded-lg hover:bg-blue-50">
+              <Link href="/quote" className="inline-flex items-center gap-2 bg-white text-brand-700 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50">
                 Get Instant Quote <ArrowRight className="w-4 h-4" />
               </Link>
               <a href={company.phoneHref} className="btn-ghost-on-dark">

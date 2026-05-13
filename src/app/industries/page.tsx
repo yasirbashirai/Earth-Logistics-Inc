@@ -32,11 +32,11 @@ export default function IndustriesPage() {
             {industries.map((i) => (
               <article key={i.slug} id={i.slug} className="card scroll-mt-32">
                 <span className="eyebrow">{i.short}</span>
-                <h2 className="font-display font-extrabold text-2xl md:text-3xl text-[--color-brand-900] mt-2">{i.name}</h2>
+                <h2 className="font-display font-extrabold text-2xl md:text-3xl text-brand-900 mt-2">{i.name}</h2>
                 <p className="mt-3 text-slate-700">{i.blurb}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {i.trailerTypes.map((t) => (
-                    <span key={t} className="text-xs bg-[--color-brand-50] text-[--color-brand-700] font-semibold px-3 py-1.5 rounded-full border border-[--color-brand-100]">{t}</span>
+                    <span key={t} className="text-xs bg-brand-50 text-brand-700 font-semibold px-3 py-1.5 rounded-full border border-brand-100">{t}</span>
                   ))}
                 </div>
               </article>

@@ -118,7 +118,7 @@ export const services: Service[] = [
       "Lowboy, double-drop, RGN and multi-axle trailers for excavators, dozers, cranes, transformers and over-dimensional cargo.",
     long: "Heavy haul is where Earth Logistics shines. From 35-ton excavators to oilfield modules and wind components, we coordinate lowboy, removable-gooseneck (RGN), perimeter-frame, dual-lane and multi-axle moves — including permits, route surveys, pilot cars and superload coordination. Use our heavy-haul quote calculator on the quote page to size your move in minutes.",
     image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d3?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1565024145557-a2f33dd0656d?auto=format&fit=crop&w=1600&q=80",
     category: "Heavy",
     capabilities: [
       "Lowboy / RGN trailers",

@@ -53,7 +53,7 @@ export default function ShippersPage() {
             </div>
 
             <div className="mt-10 rounded-2xl bg-slate-50 border border-slate-200 p-8">
-              <h3 className="font-display font-extrabold text-2xl text-[--color-brand-900]">What setup looks like</h3>
+              <h3 className="font-display font-extrabold text-2xl text-brand-900">What setup looks like</h3>
               <ol className="mt-4 space-y-3 text-slate-700 text-sm">
                 <li><strong>1. Discovery call (30 min):</strong> Lanes, equipment, volume, accessorial requirements.</li>
                 <li><strong>2. Custom capacity plan:</strong> We map your lanes to our carrier network and identify backup capacity.</li>

@@ -15,7 +15,7 @@ export default function TrustBar() {
       <div className="container-page py-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {items.map(({ icon: Icon, label }) => (
           <div key={label} className="flex items-center gap-2 text-slate-700 text-sm font-semibold">
-            <Icon className="w-5 h-5 text-[--color-brand-600]" />
+            <Icon className="w-5 h-5 text-brand-600" />
             <span>{label}</span>
           </div>
         ))}

@@ -32,12 +32,12 @@ export default function QuotePage() {
 
           <aside className="lg:col-span-4 space-y-6">
             <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
-              <h3 className="font-display font-extrabold text-xl text-[--color-brand-900]">Why Earth Logistics</h3>
+              <h3 className="font-display font-extrabold text-xl text-brand-900">Why Earth Logistics</h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-700">
-                <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-[--color-brand-600]"/> 30-minute quote turnaround, 24/7.</li>
-                <li className="flex gap-2"><ShieldCheck className="w-4 h-4 mt-0.5 text-[--color-brand-600]"/> $1.5M cargo coverage on every load.</li>
-                <li className="flex gap-2"><FileCheck2 className="w-4 h-4 mt-0.5 text-[--color-brand-600]"/> MCS-90 verified, MyCarrierPortal monitored.</li>
-                <li className="flex gap-2"><BadgeCheck className="w-4 h-4 mt-0.5 text-[--color-brand-600]"/> Itemized pricing — line haul, fuel, accessorials, no surprises.</li>
+                <li className="flex gap-2"><Clock className="w-4 h-4 mt-0.5 text-brand-600"/> 30-minute quote turnaround, 24/7.</li>
+                <li className="flex gap-2"><ShieldCheck className="w-4 h-4 mt-0.5 text-brand-600"/> $1.5M cargo coverage on every load.</li>
+                <li className="flex gap-2"><FileCheck2 className="w-4 h-4 mt-0.5 text-brand-600"/> MCS-90 verified, MyCarrierPortal monitored.</li>
+                <li className="flex gap-2"><BadgeCheck className="w-4 h-4 mt-0.5 text-brand-600"/> Itemized pricing — line haul, fuel, accessorials, no surprises.</li>
               </ul>
             </div>
             <div className="rounded-2xl brand-gradient text-white p-6">

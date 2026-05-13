@@ -25,12 +25,12 @@ export default function ContactPage() {
         <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5 space-y-5">
             <div className="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-              <h3 className="font-display text-xl font-extrabold text-[--color-brand-900]">Headquarters</h3>
+              <h3 className="font-display text-xl font-extrabold text-brand-900">Headquarters</h3>
               <ul className="mt-4 space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-[--color-brand-600] mt-0.5"/> {company.address}</li>
-                <li className="flex items-center gap-3"><Phone className="w-5 h-5 text-[--color-brand-600]"/> <a href={company.phoneHref} className="font-semibold">{company.phone}</a></li>
-                <li className="flex items-center gap-3"><Mail className="w-5 h-5 text-[--color-brand-600]"/> <a href={company.emailHref} className="font-semibold">{company.email}</a></li>
-                <li className="flex items-center gap-3"><Clock className="w-5 h-5 text-[--color-brand-600]"/> Open 24 / 7 / 365</li>
+                <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-brand-600 mt-0.5"/> {company.address}</li>
+                <li className="flex items-center gap-3"><Phone className="w-5 h-5 text-brand-600"/> <a href={company.phoneHref} className="font-semibold">{company.phone}</a></li>
+                <li className="flex items-center gap-3"><Mail className="w-5 h-5 text-brand-600"/> <a href={company.emailHref} className="font-semibold">{company.email}</a></li>
+                <li className="flex items-center gap-3"><Clock className="w-5 h-5 text-brand-600"/> Open 24 / 7 / 365</li>
               </ul>
             </div>
 

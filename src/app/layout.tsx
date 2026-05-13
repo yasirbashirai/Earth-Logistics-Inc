@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[--color-ink-900]">
+      <body className="min-h-screen flex flex-col bg-white text-ink-900">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
