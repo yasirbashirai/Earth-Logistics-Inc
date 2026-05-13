@@ -10,8 +10,8 @@ export default function Hero() {
       {/* Background truck image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1776014303191-2f9291f76c6d?auto=format&fit=crop&w=2400&q=85"
-          alt="Earth Logistics freight truck on US highway"
+          src="/trucks/truck-5.png"
+          alt="Earth Logistics Inc branded Peterbilt truck at sunset"
           fill
           priority
           sizes="100vw"

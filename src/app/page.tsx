@@ -127,8 +127,8 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=80"
-                  alt="Earth Logistics truck fleet on the road"
+                  src="/trucks/truck-6.webp"
+                  alt="Earth Logistics white Volvo semi-truck on US highway"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -219,7 +219,7 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-10 bg-grid-dark pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
           <Image
-            src="https://images.unsplash.com/photo-1720811559395-3ed8d1b16649?auto=format&fit=crop&w=1400&q=70"
+            src="/trucks/truck-2.png"
             alt=""
             fill
             sizes="50vw"

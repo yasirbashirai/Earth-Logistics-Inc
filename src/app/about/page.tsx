@@ -20,7 +20,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="A freight broker that operates like an operations team."
         subtitle="Headquartered in Saint John, Indiana. Dispatching freight 24 hours a day, 7 days a week — for shippers who refuse to gamble on capacity."
-        image="https://images.unsplash.com/photo-1720811559337-c59b75acc4de?auto=format&fit=crop&w=1800&q=80"
+        image="/trucks/truck-3.jpg"
         cta1={{ label: "Get a Quote", href: "/quote" }}
         cta2={{ label: "Contact Us", href: "/contact" }}
       />
@@ -67,8 +67,8 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=1200&q=80"
-                alt="Earth Logistics dispatch operations"
+                src="/trucks/truck-1.png"
+                alt="Earth Logistics white Peterbilt semi-truck on US highway"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
@@ -88,7 +88,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
-            <Image src="https://images.unsplash.com/photo-1601467995997-ac1ae9a8fff4?auto=format&fit=crop&w=1400&q=80" alt="Freight operations" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            <Image src="/trucks/truck-4.jpg" alt="Earth Logistics Freightliner semi-truck with reefer trailer" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
           <div>
             <span className="eyebrow">Mission</span>
