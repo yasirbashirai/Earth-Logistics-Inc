@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Reviews & Testimonials — Earth Logistics Inc",
   description:
-    "Read what shippers, carriers and freight agents say about working with Earth Logistics Inc — an asset-based freight broker in Indiana.",
+    "Read what shippers, carriers and freight agents say about working with Earth Logistics Inc — an freight broker in Indiana.",
   path: "/reviews",
 });
 
@@ -22,7 +22,7 @@ export default function ReviewsPage() {
         eyebrow="Reviews"
         title="What our shippers say about us."
         subtitle="Real feedback from real freight operators — manufacturers, builders, growers and chemical companies who trust us with their loads."
-        image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1591419478162-a4dd21b7ec0a?auto=format&fit=crop&w=1800&q=80"
       />
 
       <TrustBar />

@@ -26,7 +26,7 @@ export default function ServicesHubPage() {
         eyebrow="Services"
         title="Full-service freight brokerage across every major equipment type."
         subtitle="From standard 53' dry van to 13-axle superloads — Earth Logistics dispatches the right trailer, the right driver and the right insurance for your freight."
-        image="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1720811559371-7b0ebd219127?auto=format&fit=crop&w=1800&q=80"
         cta1={{ label: "Get Instant Quote", href: "/quote" }}
         cta2={{ label: "Talk to Dispatch", href: "tel:18554564424" }}
       />

@@ -29,7 +29,7 @@ export default function AgentsPage() {
         eyebrow="Freight agent program"
         title="Build your freight book. We'll handle the back-office."
         subtitle="If you're capped on splits, restricted on modes, or stuck behind antiquated tech — our agent program was built for you."
-        image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1645736315000-6f788915923b?auto=format&fit=crop&w=1800&q=80"
       />
 
       <TrustBar />

@@ -7,9 +7,9 @@ import { ShieldCheck, HeartHandshake, Compass, GaugeCircle, Award, MapPin } from
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "About Earth Logistics Inc — Asset-Based Freight Broker in Indiana",
+  title: "About Earth Logistics Inc — Freight Broker in Indiana",
   description:
-    "Earth Logistics Inc is a DOT-authorized asset-based freight broker headquartered in Saint John, Indiana. Learn about our mission, leadership and 24/7 operations.",
+    "Earth Logistics Inc is a DOT-authorized freight broker headquartered in Saint John, Indiana. Learn about our mission, leadership and 24/7 operations.",
   path: "/about",
 });
 
@@ -18,9 +18,9 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About us"
-        title="An asset-based partner — not just another freight broker."
+        title="A freight broker that operates like an operations team."
         subtitle="Headquartered in Saint John, Indiana. Dispatching freight 24 hours a day, 7 days a week — for shippers who refuse to gamble on capacity."
-        image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1740914994657-f1cdffdc418e?auto=format&fit=crop&w=1800&q=80"
         cta1={{ label: "Get a Quote", href: "/quote" }}
         cta2={{ label: "Contact Us", href: "/contact" }}
       />
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1644079446600-219068676743?auto=format&fit=crop&w=1200&q=80"
                 alt="Earth Logistics dispatch operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -88,7 +88,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
-            <Image src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80" alt="Freight operations" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1601467995997-ac1ae9a8fff4?auto=format&fit=crop&w=1400&q=80" alt="Freight operations" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
           <div>
             <span className="eyebrow">Mission</span>

@@ -20,7 +20,7 @@ export default function IndustriesPage() {
         eyebrow="Industries"
         title="Specialized freight, by industry."
         subtitle="Every industry has its own freight rhythm — production cycles, seasonal surges, regulatory demands. We've built our dispatch around them."
-        image="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1684695749267-233af13276d0?auto=format&fit=crop&w=1800&q=80"
         cta1={{ label: "Get Industry Quote", href: "/quote" }}
       />
 

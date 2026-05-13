@@ -29,7 +29,7 @@ export default function ShippersPage() {
         eyebrow="Shipper setup"
         title="Reliable capacity. Transparent pricing. Real partnership."
         subtitle="Stop losing sleep over carrier no-shows and surprise accessorials. Earth Logistics builds you a capacity plan that holds — month after month."
-        image="https://images.unsplash.com/photo-1605559911160-a3d95d213904?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&w=1800&q=80"
       />
 
       <TrustBar />

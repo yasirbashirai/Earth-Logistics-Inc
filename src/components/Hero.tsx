@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background truck image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=2400&q=85"
+          src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?auto=format&fit=crop&w=2400&q=85"
           alt="Earth Logistics freight truck on US highway"
           fill
           priority
@@ -44,7 +44,7 @@ export default function Hero() {
 
             {/* Sub */}
             <p className="mt-5 text-base md:text-lg lg:text-xl text-blue-50/90 max-w-2xl leading-relaxed">
-              Asset-based freight brokerage trusted by US manufacturers, builders, growers and chemical
+              Freight brokerage trusted by US manufacturers, builders, growers and chemical
               shippers. Every trailer type. Every state. Every hour.
             </p>
 

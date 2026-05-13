@@ -26,7 +26,7 @@ import TrustBar from "@/components/TrustBar";
 import CtaStrip from "@/components/CtaStrip";
 import SectionHeader from "@/components/SectionHeader";
 import LaneTicker from "@/components/LaneTicker";
-import EquipmentBento from "@/components/EquipmentBento";
+import EquipmentShowcase from "@/components/EquipmentShowcase";
 import FaqAccordion from "@/components/FaqAccordion";
 import PartnerLogos from "@/components/PartnerLogos";
 import { testimonials } from "@/data/testimonials";
@@ -35,9 +35,9 @@ import { regions } from "@/data/coverage";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "Earth Logistics Inc | Asset-Based Freight Broker — Revolving Freight Globally 24/7",
+  title: "Earth Logistics Inc | Freight Broker — Revolving Freight Globally 24/7",
   description:
-    "Asset-based DOT-authorized freight broker in Saint John, Indiana. Instant quotes for dry van, flatbed, reefer, lowboy, end dump, pneumatic tanker, hazmat & more. 25,000+ vetted carriers, 24/7 dispatch.",
+    "DOT-authorized freight broker in Saint John, Indiana. Instant quotes for dry van, flatbed, reefer, lowboy, end dump, pneumatic tanker, hazmat & more. 25,000+ vetted carriers, 24/7 dispatch.",
   path: "/",
 });
 
@@ -93,7 +93,7 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <span className="eyebrow">Why Earth Logistics</span>
               <h2 className="section-title mt-2">
-                Asset-based <span className="brand-gradient-text">discipline.</span><br />Broker-grade reach.
+                Freight broker <span className="brand-gradient-text">discipline.</span><br />Nationwide reach.
               </h2>
               <p className="mt-5 text-slate-600 text-lg leading-relaxed">
                 We're not a transactional broker — we're an operations partner. Backed by a vetted network of 25,000+ carriers and a 24/7 dispatch team based in Saint John, Indiana, we move every major equipment type in the United States.
@@ -127,8 +127,8 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80"
-                  alt="Earth Logistics aerial freight operations"
+                  src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=80"
+                  alt="Earth Logistics truck fleet on the road"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -158,24 +158,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ EQUIPMENT BENTO ============ */}
+      {/* ============ EQUIPMENT TABS ============ */}
       <section className="section bg-slate-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-light opacity-50 pointer-events-none" />
         <div className="container-page relative">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div className="max-w-2xl">
-              <span className="eyebrow">Capacity at a glance</span>
+              <span className="eyebrow">Equipment we dispatch</span>
               <h2 className="section-title mt-2">
-                Every trailer type. <span className="brand-gradient-text">One dispatch desk.</span>
+                Pick your trailer. <span className="brand-gradient-text">See capabilities live.</span>
               </h2>
               <p className="mt-4 text-slate-600 text-lg">
-                Click any equipment type to see capabilities, industries served, and request a binding quote.
+                Click any equipment tab below — image, capabilities and industries update instantly.
               </p>
             </div>
             <Link href="/services" className="btn-outline self-start whitespace-nowrap">All services <ArrowRight className="w-4 h-4"/></Link>
           </div>
           <div className="mt-12">
-            <EquipmentBento />
+            <EquipmentShowcase />
           </div>
         </div>
       </section>
@@ -219,7 +219,7 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-10 bg-grid-dark pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
           <Image
-            src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1400&q=70"
+            src="https://images.unsplash.com/photo-1720811559395-3ed8d1b16649?auto=format&fit=crop&w=1400&q=70"
             alt=""
             fill
             sizes="50vw"

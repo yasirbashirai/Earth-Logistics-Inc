@@ -21,14 +21,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://earthlogistics247.com"),
   title: {
-    default: "Earth Logistics Inc | Asset-Based Freight Broker — Revolving Freight Globally 24/7",
+    default: "Earth Logistics Inc | Freight Broker — Revolving Freight Globally 24/7",
     template: "%s | Earth Logistics Inc",
   },
   description:
-    "Earth Logistics Inc is a DOT-authorized asset-based freight broker in Saint John, Indiana. Dry van, flatbed, reefer, lowboy, end dump, pneumatic tanker, hazmat, hopper bottom & more. Instant quotes, 24/7 dispatch, 25,000+ vetted carriers.",
+    "Earth Logistics Inc is a DOT-authorized freight broker in Saint John, Indiana. Dry van, flatbed, reefer, lowboy, end dump, pneumatic tanker, hazmat, hopper bottom & more. Instant quotes, 24/7 dispatch, 25,000+ vetted carriers.",
   keywords: [
     "freight broker",
-    "asset-based freight broker",
     "Indiana freight broker",
     "Saint John Indiana logistics",
     "dry van shipping",
@@ -50,14 +49,14 @@ export const metadata: Metadata = {
     siteName: "Earth Logistics Inc",
     title: "Earth Logistics Inc — Revolving Freight Globally 24/7",
     description:
-      "Asset-based DOT-authorized freight broker. Instant freight quotes for dry van, flatbed, reefer, lowboy heavy-haul, end dump, pneumatic tanker, hazmat and more.",
+      "DOT-authorized freight broker. Instant freight quotes for dry van, flatbed, reefer, lowboy heavy-haul, end dump, pneumatic tanker, hazmat and more.",
     images: ["/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Earth Logistics Inc — Revolving Freight Globally 24/7",
     description:
-      "Asset-based DOT-authorized freight broker. Instant freight quotes across the United States.",
+      "DOT-authorized freight broker. Instant freight quotes across the United States.",
     images: ["/logo.png"],
   },
   icons: {

@@ -22,7 +22,7 @@ export default function BlogIndex() {
         eyebrow="Blog"
         title="Freight insights from the dispatch desk."
         subtitle="Plain-English guides for shippers, carriers and freight agents — written by the operators who run the loads."
-        image="https://images.unsplash.com/photo-1593696954577-ab3d39317b97?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1708596718852-5aa3947ccdf5?auto=format&fit=crop&w=1800&q=80"
       />
 
       <TrustBar />

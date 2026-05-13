@@ -15,10 +15,10 @@ export const blogPosts: BlogPost[] = [
     slug: "how-to-choose-a-freight-broker-2026",
     title: "How to Choose a Freight Broker in 2026 (Without Getting Burned)",
     excerpt:
-      "Most freight brokers look identical on a Google search. Here's the 7-point checklist asset-based shippers actually use.",
+      "Most freight brokers look identical on a Google search. Here's the 7-point checklist serious shippers actually use.",
     body: [
       "If you've ever waited on a load that 'fell through' because your broker double-booked the carrier, you already know: brokers aren't commodities. Here's how serious shippers evaluate brokers in 2026.",
-      "**1. Asset-based vs pure broker.** Asset-based brokers (like Earth Logistics) have skin in the game — they understand carrier operations because they've operated trucks themselves. Pure brokers play arbitrage.",
+      "**1. Operations-driven vs transactional.** Freight brokers like Earth Logistics that run hands-on dispatch understand carrier operations because they've operated trucks themselves. Transactional brokers play arbitrage.",
       "**2. FMCSA standing and bonding.** Check the broker's MC number on FMCSA's SAFER website. Look for the BMC-84 surety bond, current operating authority, and zero major out-of-service flags.",
       "**3. Carrier vetting process.** Ask: what's your carrier onboarding checklist? You should hear MCS-90 verification, current insurance certificates, FMCSA safety scores, and a carrier-monitoring service like Highway, RMIS or MyCarrierPortal.",
       "**4. Modal coverage.** A broker who can only book dry van is a broker who'll struggle when your load needs flatbed, reefer, or hazmat. Earth Logistics dispatches every major equipment type in-house.",
@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Shipper Tips",
     image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1740914994657-f1cdffdc418e?auto=format&fit=crop&w=1600&q=80",
   },
   {
     slug: "heavy-haul-permitting-guide",
@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Heavy Haul",
     image:
-      "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1720811559395-3ed8d1b16649?auto=format&fit=crop&w=1600&q=80",
   },
   {
     slug: "becoming-a-freight-agent-with-earth-logistics",
@@ -76,6 +76,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Agent Program",
     image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1645736315000-6f788915923b?auto=format&fit=crop&w=1600&q=80",
   },
 ];

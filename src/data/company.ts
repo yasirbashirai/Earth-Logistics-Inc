@@ -2,7 +2,7 @@ export const company = {
   name: "Earth Logistics Inc",
   tagline: "Revolving Freight Globally 24/7",
   shortDesc:
-    "DOT-authorized asset-based freight broker headquartered in Saint John, Indiana — delivering full-service freight solutions across all 48 states, 24/7.",
+    "DOT-authorized freight broker headquartered in Saint John, Indiana — delivering full-service freight solutions across all 48 states, 24/7.",
   phone: "855-456-4424",
   phoneHref: "tel:18554564424",
   email: "info@earthlogistics247.com",

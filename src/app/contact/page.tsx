@@ -18,7 +18,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's move freight."
         subtitle="Reach our team 24 hours a day, every day. We answer the phone — no voicemail loops, no overseas call center."
-        image="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1800&q=80"
       />
 
       <section className="section">

@@ -21,7 +21,7 @@ export default function CoveragePage() {
         eyebrow="Coverage"
         title="48-state freight coverage. Midwest core."
         subtitle="Headquartered at the Midwest freight crossroads in Saint John, Indiana — with deep capacity across every major US freight corridor."
-        image="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1651928977880-ffb2d963b6b4?auto=format&fit=crop&w=1800&q=80"
         cta1={{ label: "Quote a Lane", href: "/quote" }}
       />
 
