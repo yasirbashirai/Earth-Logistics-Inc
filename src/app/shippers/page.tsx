@@ -3,7 +3,7 @@ import JoinForm from "@/components/JoinForms";
 import SectionHeader from "@/components/SectionHeader";
 import CtaStrip from "@/components/CtaStrip";
 import TrustBar from "@/components/TrustBar";
-import { GaugeCircle, ShieldCheck, FileCheck2, Truck, Eye, HeadphonesIcon } from "lucide-react";
+import { GaugeCircle, ShieldCheck, FileCheck2, Truck, Eye, Headphones } from "lucide-react";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -19,7 +19,7 @@ const perks = [
   { icon: FileCheck2, t: "Transparent pricing", d: "Itemized line haul, fuel, accessorials — no hidden margins." },
   { icon: Truck, t: "Every equipment type", d: "From 53' dry van to 13-axle superloads." },
   { icon: Eye, t: "Real-time visibility", d: "Live GPS, milestone notifications, direct driver contact." },
-  { icon: HeadphonesIcon, t: "Single point of contact", d: "Dedicated freight ops manager — same person on every call." },
+  { icon: Headphones, t: "Single point of contact", d: "Dedicated freight ops manager — same person on every call." },
 ];
 
 export default function ShippersPage() {

@@ -1,4 +1,4 @@
-import { ShieldCheck, BadgeCheck, FileCheck2, Truck, HeadphonesIcon, Globe2 } from "lucide-react";
+import { ShieldCheck, BadgeCheck, FileCheck2, Truck, Headphones, Globe2 } from "lucide-react";
 
 const items = [
   { icon: ShieldCheck, label: "DOT Authorized" },
@@ -6,7 +6,7 @@ const items = [
   { icon: FileCheck2, label: "BMC-84 Bonded" },
   { icon: Truck, label: "25,000+ Vetted Carriers" },
   { icon: Globe2, label: "48-State Coverage" },
-  { icon: HeadphonesIcon, label: "24/7 Live Dispatch" },
+  { icon: Headphones, label: "24/7 Live Dispatch" },
 ];
 
 export default function TrustBar() {
