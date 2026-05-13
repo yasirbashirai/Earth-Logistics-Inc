@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Sparkles, Star, BadgeCheck, ShieldCheck, Clock, Truck } from "lucide-react";
+import { ArrowRight, Phone, Sparkles, BadgeCheck, ShieldCheck, Clock, Truck } from "lucide-react";
 import QuoteFormCompact from "@/components/QuoteFormCompact";
 import { company } from "@/data/company";
 
@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background truck image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1670509295484-df0c2512fec4?auto=format&fit=crop&w=2400&q=85"
+          src="https://images.unsplash.com/photo-1776014303191-2f9291f76c6d?auto=format&fit=crop&w=2400&q=85"
           alt="Earth Logistics freight truck on US highway"
           fill
           priority
@@ -33,17 +33,25 @@ export default function Hero() {
               <span className="tracking-wider">DOT-AUTHORIZED · FMCSA REGISTERED · BMC-84 BONDED</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="font-display font-extrabold text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight mt-5">
-              Enterprise-grade
-              <br />
-              freight, dispatched
-              <br />
-              <span className="brand-gradient-text bg-clip-text">24 / 7 / 365.</span>
+            {/* Headline — big brand name + tagline */}
+            <h1 className="font-display font-black tracking-tight mt-5 leading-[0.95]">
+              <span className="block text-white text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+                EARTH LOGISTICS
+              </span>
+              <span className="block brand-gradient-text bg-clip-text text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+                INC
+              </span>
+              <span className="block mt-4 text-brand-200 font-display font-bold text-lg md:text-xl lg:text-2xl tracking-[0.18em] uppercase">
+                Revolving Freight Globally 24/7
+              </span>
             </h1>
 
-            {/* Sub */}
-            <p className="mt-5 text-base md:text-lg lg:text-xl text-blue-50/90 max-w-2xl leading-relaxed">
+            {/* Sub-headline (was the original H1) */}
+            <p className="mt-7 text-xl md:text-2xl lg:text-3xl font-display font-bold text-white leading-tight max-w-2xl">
+              Enterprise-grade freight, dispatched <span className="brand-gradient-text">24 / 7 / 365.</span>
+            </p>
+
+            <p className="mt-4 text-base md:text-lg text-blue-50/90 max-w-2xl leading-relaxed">
               Freight brokerage trusted by US manufacturers, builders, growers and chemical
               shippers. Every trailer type. Every state. Every hour.
             </p>
@@ -76,19 +84,6 @@ export default function Hero() {
               <div className="absolute -inset-3 bg-brand-500/20 blur-2xl rounded-3xl" />
               <div className="relative">
                 <QuoteFormCompact />
-              </div>
-
-              {/* Floating rating chip */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-3 bg-white text-brand-900 rounded-2xl shadow-2xl px-4 py-3 items-center gap-3 border border-slate-100">
-                <div className="flex text-amber-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                  ))}
-                </div>
-                <div className="text-xs">
-                  <div className="font-display font-extrabold">5.0 / 5</div>
-                  <div className="text-slate-500 text-[11px] leading-tight">Verified shipper reviews</div>
-                </div>
               </div>
             </div>
           </div>

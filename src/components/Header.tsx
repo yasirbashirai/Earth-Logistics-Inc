@@ -110,26 +110,16 @@ export default function Header() {
         onMouseLeave={() => setOpenMega(null)}
       >
         <div className="container-page flex items-center justify-between py-3 lg:py-4 relative">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="relative">
-              <Image
-                src="/logo.png"
-                alt="Earth Logistics Inc"
-                width={64}
-                height={64}
-                className="rounded-lg shadow-md"
-                priority
-              />
-            </div>
-            <div className="hidden sm:block leading-tight">
-              <div className="font-display font-extrabold text-lg lg:text-xl text-brand-900 tracking-tight">
-                EARTH LOGISTICS <span className="text-brand-600">INC</span>
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
-                Revolving Freight Globally 24/7
-              </div>
-            </div>
+          {/* Logo only */}
+          <Link href="/" className="flex items-center shrink-0" aria-label="Earth Logistics Inc — Home">
+            <Image
+              src="/logo.png"
+              alt="Earth Logistics Inc"
+              width={72}
+              height={72}
+              className="rounded-lg shadow-md"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

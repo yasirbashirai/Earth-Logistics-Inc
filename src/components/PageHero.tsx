@@ -15,7 +15,7 @@ export default function PageHero({
   eyebrow,
   title,
   subtitle,
-  image = "https://images.unsplash.com/photo-1670509295484-df0c2512fec4?auto=format&fit=crop&w=1800&q=80",
+  image = "https://images.unsplash.com/photo-1776014303191-2f9291f76c6d?auto=format&fit=crop&w=1800&q=80",
   cta1,
   cta2,
   size = "sm",

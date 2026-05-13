@@ -57,7 +57,7 @@ export const services: Service[] = [
       "48' and 53' flatbed trailers with full tarping, strapping and chain capability for over-dimensional and industrial loads.",
     long: "When freight can't move under a roof, Earth Logistics ships it on an open deck. Our flatbed network covers standard flatbeds, step decks, stretch trailers and Conestoga curtain-side flats — fully tarped and strapped per FMCSA and shipper specs. We secure capacity for steel, lumber, construction materials, rooftop HVAC, industrial machinery and palletized building products.",
     image:
-      "https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1761917904658-2a9ecb84a169?auto=format&fit=crop&w=1600&q=80",
     category: "Specialized",
     capabilities: [
       "48' / 53' flatbed",
@@ -88,7 +88,7 @@ export const services: Service[] = [
       "53' multi-temp reefer trailers with continuous tracking, temperature monitoring and FSMA-compliant carriers.",
     long: "Earth Logistics ships food, beverage, produce, pharma and temperature-sensitive chemicals in 53' refrigerated trailers ranging from frozen (-10°F) to climate-controlled (+70°F). All reefer carriers meet FSMA and Sanitary Transportation Rule requirements, and continuous temperature monitoring is available for high-value loads.",
     image:
-      "https://images.unsplash.com/photo-1473445730015-841f29a9490b?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1586828909860-faf5ed195143?auto=format&fit=crop&w=1600&q=80",
     category: "Van",
     capabilities: [
       "Frozen, refrigerated and climate-controlled",
@@ -119,7 +119,7 @@ export const services: Service[] = [
       "Lowboy, double-drop, RGN and multi-axle trailers for excavators, dozers, cranes, transformers and over-dimensional cargo.",
     long: "Heavy haul is where Earth Logistics shines. From 35-ton excavators to oilfield modules and wind components, we coordinate lowboy, removable-gooseneck (RGN), perimeter-frame, dual-lane and multi-axle moves — including permits, route surveys, pilot cars and superload coordination. Use our heavy-haul quote calculator on the quote page to size your move in minutes.",
     image:
-      "https://images.unsplash.com/photo-1631744591853-998c4308bbb0?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1773415314118-0dfdfb36ce36?auto=format&fit=crop&w=1600&q=80",
     category: "Heavy",
     capabilities: [
       "Lowboy / RGN trailers",
@@ -150,7 +150,7 @@ export const services: Service[] = [
       "Open carriers for daily auto moves; enclosed transport for exotic, classic and high-value vehicles.",
     long: "Earth Logistics handles single-unit auto transport, dealer-to-dealer multi-car runs and full enclosed transport for exotics and classics. Bonded, insured carriers with up to $250,000 cargo coverage on enclosed lanes. Door-to-door pickup, real-time updates, and a single point of contact through delivery.",
     image:
-      "https://images.unsplash.com/photo-1485575301924-6891ef935dcd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1720014432727-3ec661c27568?auto=format&fit=crop&w=1600&q=80",
     category: "Specialized",
     capabilities: [
       "Open 7-10 car carriers",
@@ -181,7 +181,7 @@ export const services: Service[] = [
       "39'+ end dump and side dump trailers for aggregates, asphalt, demolition debris, sand and crushed stone.",
     long: "Earth Logistics' bulk division operates an active network of end dump and 39' heavy-bulk end dump trailers covering aggregates, asphalt, sand, gravel, soil and demolition debris. We coordinate sequencing for paving crews, mine haul, demolition cleanup and import/export bulk staging — with the dispatch responsiveness construction jobs demand.",
     image:
-      "https://images.unsplash.com/photo-1605705658744-45f0fe8f9663?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1671022412547-75c4cb01f47e?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "39' heavy-bulk end dumps",
@@ -212,7 +212,7 @@ export const services: Service[] = [
       "Food-grade and industrial pneumatic tankers for cement, flour, sugar, plastic pellets, sand and chemical powders.",
     long: "Pneumatic transfer is its own specialty — and we book it daily. Earth Logistics dispatches food-grade and industrial pneumatic tankers (45'-50') for cement, fly ash, lime, sugar, flour, starch, plastic pellets, frac sand and dry chemicals. Carriers are vetted for blower equipment, wash-out compliance and unloading time windows.",
     image:
-      "https://images.unsplash.com/photo-1586828909684-ea8a07d2531a?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1649372708980-1efce0ffb7bb?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "Food-grade & industrial pneumatic",
@@ -243,7 +243,7 @@ export const services: Service[] = [
       "DOT-407, DOT-406 and food-grade stainless tankers for chemical, fuel, edible oil and bulk liquid freight.",
     long: "Earth Logistics dispatches DOT-407 chemical tankers, DOT-406 fuel tankers and stainless food-grade tankers for edible oil, sweetener, dairy, juice concentrate and bulk water. All hazardous tanker moves are dispatched only through hazmat-certified, placarded carriers compliant with 49 CFR.",
     image:
-      "https://images.unsplash.com/photo-1596455671092-d7e08c435509?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1775522634465-a256f9763c8a?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "DOT-407 chemical tanker",
@@ -274,7 +274,7 @@ export const services: Service[] = [
       "Hopper bottom (grain trailer) capacity for corn, soybeans, wheat, fertilizer, salt and dry agricultural inputs.",
     long: "Earth Logistics moves grain, oilseeds, fertilizer, agricultural inputs and dry bulk in hopper bottom (grain) trailers. We operate during planting, harvest and shoulder seasons with elevator and feed-mill loading experience — including grain-grade origin documentation and pre-load tarp inspection.",
     image:
-      "https://images.unsplash.com/photo-1694113372786-2553caec0c76?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1763067036683-00e8491af467?auto=format&fit=crop&w=1600&q=80",
     category: "Bulk",
     capabilities: [
       "Grain (corn, soy, wheat)",
@@ -305,7 +305,7 @@ export const services: Service[] = [
       "Hazmat-certified carriers, placarded trailers, 49 CFR compliance and full hazmat manifest handling.",
     long: "Earth Logistics arranges hazardous material freight across all DOT hazard classes — including flammable liquids, corrosives, oxidizers and Class 9. Every hazmat load is dispatched only through carriers with current hazmat endorsements, valid placarding, current MCS-90 endorsements and 49 CFR compliance. Hazmat manifest and emergency response coordination is included.",
     image:
-      "https://images.unsplash.com/photo-1629881635342-c1272d45d0fa?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1757191377107-f1d78844e769?auto=format&fit=crop&w=1600&q=80",
     category: "Hazmat",
     capabilities: [
       "All DOT hazard classes 1-9",

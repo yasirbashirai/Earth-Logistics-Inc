@@ -20,7 +20,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="A freight broker that operates like an operations team."
         subtitle="Headquartered in Saint John, Indiana. Dispatching freight 24 hours a day, 7 days a week — for shippers who refuse to gamble on capacity."
-        image="https://images.unsplash.com/photo-1740914994657-f1cdffdc418e?auto=format&fit=crop&w=1800&q=80"
+        image="https://images.unsplash.com/photo-1720811559337-c59b75acc4de?auto=format&fit=crop&w=1800&q=80"
         cta1={{ label: "Get a Quote", href: "/quote" }}
         cta2={{ label: "Contact Us", href: "/contact" }}
       />
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1644079446600-219068676743?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=1200&q=80"
                 alt="Earth Logistics dispatch operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
