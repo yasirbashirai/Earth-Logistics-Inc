@@ -1,0 +1,30 @@
+export const company = {
+  name: "Earth Logistics Inc",
+  tagline: "Revolving Freight Globally 24/7",
+  shortDesc:
+    "DOT-authorized asset-based freight broker headquartered in Saint John, Indiana — delivering full-service freight solutions across all 48 states, 24/7.",
+  phone: "855-456-4424",
+  phoneHref: "tel:18554564424",
+  email: "info@earthlogistics247.com",
+  emailHref: "mailto:info@earthlogistics247.com",
+  address: "9401 Iris St, Saint John, IN 46373",
+  city: "Saint John",
+  state: "Indiana",
+  zip: "46373",
+  hours: "24 / 7 / 365",
+  domain: "earthlogistics247.com",
+  contact: "AJ Smith",
+  category: "Freight Broker",
+  stats: [
+    { value: "25,000+", label: "Vetted carriers" },
+    { value: "48", label: "States covered" },
+    { value: "24/7", label: "Live dispatch" },
+    { value: "98.6%", label: "On-time delivery" },
+  ],
+  social: {
+    facebook: "#",
+    linkedin: "#",
+    instagram: "#",
+    twitter: "#",
+  },
+};
