@@ -127,8 +127,8 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/trucks/truck-6.webp"
-                  alt="Earth Logistics white Volvo semi-truck on US highway"
+                  src="/trucks/truck-1.png"
+                  alt="Earth Logistics white Peterbilt semi-truck on US highway"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

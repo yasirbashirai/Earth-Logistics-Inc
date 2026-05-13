@@ -67,8 +67,8 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/trucks/truck-1.png"
-                alt="Earth Logistics white Peterbilt semi-truck on US highway"
+                src="https://images.unsplash.com/photo-1720811559395-3ed8d1b16649?auto=format&fit=crop&w=1200&q=80"
+                alt="American long-nose semi-truck on US highway"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
