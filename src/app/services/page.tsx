@@ -39,11 +39,13 @@ export default function ServicesHubPage() {
             <SectionHeader
               eyebrow={cat}
               title={
-                cat === "Van" ? "Van & Refrigerated Capacity" :
+                cat === "Van" ? "Dry Van Capacity" :
+                cat === "Reefer" ? "Refrigerated (Reefer) Capacity" :
                 cat === "Specialized" ? "Specialized & Open-Deck" :
                 cat === "Bulk" ? "Bulk Side — Dry & Liquid" :
                 cat === "Heavy" ? "Heavy Haul & Permitted Moves" :
-                "Hazardous Materials"
+                cat === "Hazmat" ? "Hazardous Materials" :
+                cat
               }
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">

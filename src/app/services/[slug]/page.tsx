@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight, Check, ChevronRight, Phone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import QuoteFormCompact from "@/components/QuoteFormCompact";
@@ -35,8 +35,39 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   const related = services.filter((x) => x.slug !== slug).slice(0, 3);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: s.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    serviceType: s.category,
+    description: s.blurb,
+    provider: { "@id": "https://earthlogistics247.com#organization" },
+    areaServed: { "@type": "Country", name: "United States" },
+    url: `https://earthlogistics247.com/services/${s.slug}`,
+  };
+
   return (
     <>
+      <Script
+        id={`ld-faq-${s.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id={`ld-service-${s.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <PageHero
         eyebrow={s.category + " Freight"}
         title={s.name}

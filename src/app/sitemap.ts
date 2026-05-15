@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://earthlogistics247.com";
   const now = new Date();

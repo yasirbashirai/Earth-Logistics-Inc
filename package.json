@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:static": "next build && rm -rf deploy && cp -R out deploy && cp apache/.htaccess deploy/.htaccess && cp apache/UPLOAD-INSTRUCTIONS.md deploy/UPLOAD-INSTRUCTIONS.md && find deploy -name '__next.*.txt' -delete && find deploy -name 'index.txt' -delete && echo '\\n✅ deploy/ ready — upload its contents to your hosting public_html\\n'"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",
