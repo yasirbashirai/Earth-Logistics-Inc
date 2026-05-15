@@ -1,57 +1,50 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { CheckCircle2, Calculator, Truck, Ruler } from "lucide-react";
+import { useState } from "react";
+import { CheckCircle2, Search, Ruler, FileText } from "lucide-react";
 import { services } from "@/data/services";
 
-type Tab = "standard" | "heavy";
+type TabId = "lookup" | "dimensions" | "description";
+
+const tabs: { id: TabId; title: string; description: string; icon: typeof Search }[] = [
+  {
+    id: "lookup",
+    title: "Look up equipment shipping specs",
+    description:
+      "Enter pickup, delivery, make, model, and equipment type to get a freight price fast.",
+    icon: Search,
+  },
+  {
+    id: "dimensions",
+    title: "Input load dimensions and weight",
+    description:
+      "Enter pickup, delivery, description, dimensions, and weight for freight that cannot be looked up in the equipment catalog.",
+    icon: Ruler,
+  },
+  {
+    id: "description",
+    title: "Start with load description",
+    description:
+      "Describe the shipment first and get to a quote faster. We'll fill in machines, loads, and stops where we can.",
+    icon: FileText,
+  },
+];
+
+const MAKES = ["Caterpillar", "John Deere", "Komatsu", "Volvo", "Liebherr", "Bobcat", "Kubota", "JCB", "Hitachi", "Case"];
+const EQUIPMENT_TYPES = ["Excavator", "Bulldozer", "Wheel Loader", "Skid Steer", "Crane", "Backhoe", "Forklift", "Telehandler", "Grader", "Dump Truck"];
 
 export default function QuoteFormFull() {
-  const [tab, setTab] = useState<Tab>("standard");
+  const [active, setActive] = useState<TabId>("lookup");
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  // Heavy haul calculator state
-  const [hh, setHh] = useState({
-    length: "",
-    width: "",
-    height: "",
-    weight: "",
-    miles: "",
-    axles: "8",
-    permitStates: "2",
-    pilots: "1",
-  });
+  // Tab 2 unit toggles
+  const [lengthUnit, setLengthUnit] = useState<"ft+in" | "in" | "ft" | "m" | "mm">("ft+in");
+  const [weightUnit, setWeightUnit] = useState<"lb" | "kg">("lb");
 
-  const heavyEstimate = useMemo(() => {
-    const miles = parseFloat(hh.miles) || 0;
-    const weight = parseFloat(hh.weight) || 0;
-    const width = parseFloat(hh.width) || 0;
-    const height = parseFloat(hh.height) || 0;
-    const axles = parseInt(hh.axles) || 8;
-    const permitStates = parseInt(hh.permitStates) || 0;
-    const pilots = parseInt(hh.pilots) || 0;
-
-    if (!miles || !weight) return null;
-
-    // Base rate per mile scaled by axles and weight
-    const baseRate = 4.25 + Math.max(0, axles - 8) * 0.65;
-    const overweightMult = weight > 80000 ? 1 + (weight - 80000) / 200000 : 1;
-    const overdimMult =
-      (width > 8.5 ? 1.08 : 1) * (height > 13.5 ? 1.12 : 1);
-    const linehaul = miles * baseRate * overweightMult * overdimMult;
-    const permits = permitStates * 175;
-    const pilotCost = pilots * miles * 1.85;
-    const fuel = miles * 0.65;
-    const total = linehaul + permits + pilotCost + fuel;
-    return {
-      linehaul,
-      permits,
-      pilotCost,
-      fuel,
-      total,
-    };
-  }, [hh]);
+  // Char counters for textareas
+  const [desc, setDesc] = useState("");
+  const [pieces, setPieces] = useState("");
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -68,202 +61,324 @@ export default function QuoteFormFull() {
         <CheckCircle2 className="w-14 h-14 text-emerald-500 mx-auto" />
         <h3 className="mt-3 font-display text-2xl font-extrabold">Quote request received</h3>
         <p className="mt-2 text-slate-600 max-w-md mx-auto">
-          A senior freight operations specialist will follow up within 30 minutes (24/7). For immediate dispatch call <strong>855-456-4424</strong>.
+          A senior freight operations specialist will follow up within 30 minutes (24/7). For
+          immediate dispatch call <strong>855-456-4424</strong>.
         </p>
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl bg-white shadow-xl border border-slate-200 overflow-hidden">
-      {/* Tabs */}
-      <div className="flex border-b border-slate-200">
-        <button
-          onClick={() => setTab("standard")}
-          className={`flex-1 px-5 py-4 font-semibold text-sm flex items-center justify-center gap-2 ${
-            tab === "standard"
-              ? "bg-brand-50 text-brand-700 border-b-2 border-brand-600"
-              : "text-slate-600 hover:bg-slate-50"
-          }`}
-        >
-          <Truck className="w-4 h-4" /> Standard Freight Quote
-        </button>
-        <button
-          onClick={() => setTab("heavy")}
-          className={`flex-1 px-5 py-4 font-semibold text-sm flex items-center justify-center gap-2 ${
-            tab === "heavy"
-              ? "bg-brand-50 text-brand-700 border-b-2 border-brand-600"
-              : "text-slate-600 hover:bg-slate-50"
-          }`}
-        >
-          <Calculator className="w-4 h-4" /> Heavy Haul Calculator
-        </button>
+    <div className="space-y-6">
+      {/* Heading */}
+      <div className="text-center">
+        <h2 className="font-display font-extrabold text-3xl md:text-4xl text-brand-900">
+          Get a Freight Quote
+        </h2>
+        <p className="mt-2 text-slate-600">Get an instant quote for heavy equipment transport.</p>
       </div>
 
-      <form onSubmit={submit} className="p-6 md:p-8">
-        {tab === "standard" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="form-label">Pickup City, ST or ZIP</label>
-              <input required className="form-input" placeholder="Saint John, IN 46373" />
-            </div>
-            <div>
-              <label className="form-label">Delivery City, ST or ZIP</label>
-              <input required className="form-input" placeholder="Dallas, TX 75201" />
-            </div>
-            <div>
-              <label className="form-label">Equipment Type</label>
-              <select required className="form-select" defaultValue="">
-                <option value="" disabled>Select equipment</option>
-                {services.map((s) => (
-                  <option key={s.slug} value={s.slug}>{s.name}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="form-label">Commodity</label>
-              <input className="form-input" placeholder="Steel coils / Pallets / Frozen food" />
-            </div>
-            <div>
-              <label className="form-label">Total Weight (lbs)</label>
-              <input className="form-input" placeholder="42,000" />
-            </div>
-            <div>
-              <label className="form-label">Pickup Date</label>
-              <input type="date" className="form-input" />
-            </div>
-            <div>
-              <label className="form-label">Company Name</label>
-              <input required className="form-input" />
-            </div>
-            <div>
-              <label className="form-label">Your Name</label>
-              <input required className="form-input" />
-            </div>
-            <div>
-              <label className="form-label">Email</label>
-              <input required type="email" className="form-input" />
-            </div>
-            <div>
-              <label className="form-label">Phone</label>
-              <input required type="tel" className="form-input" />
-            </div>
-            <div className="md:col-span-2">
-              <label className="form-label">Load Notes</label>
-              <textarea rows={3} className="form-textarea" placeholder="Anything we should know — accessorials, special handling, recurring lane, etc." />
-            </div>
+      {/* Three step / tab cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {tabs.map((t) => {
+          const selected = active === t.id;
+          return (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setActive(t.id)}
+              className={`text-left rounded-2xl border-2 p-5 transition ${
+                selected
+                  ? "bg-brand-50 border-brand-600 shadow-md"
+                  : "bg-white border-slate-200 hover:border-brand-300 hover:shadow-sm"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div
+                    className={`w-9 h-9 rounded-lg flex items-center justify-center ${
+                      selected ? "bg-brand-600 text-white" : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    <t.icon className="w-4 h-4" />
+                  </div>
+                  <h3
+                    className={`font-display font-extrabold text-base leading-tight ${
+                      selected ? "text-brand-900" : "text-slate-900"
+                    }`}
+                  >
+                    {t.title}
+                  </h3>
+                </div>
+                {selected && (
+                  <span className="text-[10px] uppercase tracking-widest font-bold bg-brand-600 text-white px-2 py-1 rounded-full whitespace-nowrap">
+                    Selected
+                  </span>
+                )}
+              </div>
+              <p className="mt-3 text-xs text-slate-600 leading-relaxed">{t.description}</p>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Form panel */}
+      <form
+        onSubmit={submit}
+        className="rounded-2xl bg-white shadow-xl border border-slate-200 p-6 md:p-8"
+      >
+        {/* Pickup + Delivery (all tabs) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="form-label">
+              Pickup location <span className="text-red-500">*</span>
+            </label>
+            <input required className="form-input" placeholder="Business, city, or ZIP" />
           </div>
+          <div>
+            <label className="form-label">
+              Delivery location <span className="text-red-500">*</span>
+            </label>
+            <input required className="form-input" placeholder="Business, city, or ZIP" />
+          </div>
+        </div>
+
+        {/* TAB 1 — Lookup */}
+        {active === "lookup" && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+              <div>
+                <label className="form-label">
+                  Make <span className="text-red-500">*</span>
+                </label>
+                <select required className="form-select" defaultValue="">
+                  <option value="" disabled>
+                    Select or type...
+                  </option>
+                  {MAKES.map((m) => (
+                    <option key={m} value={m}>
+                      {m}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="form-label">
+                  Model <span className="text-red-500">*</span>
+                </label>
+                <input required className="form-input" placeholder="Select or type..." />
+              </div>
+              <div>
+                <label className="form-label">
+                  Equipment Type <span className="text-red-500">*</span>
+                </label>
+                <select required className="form-select" defaultValue="">
+                  <option value="" disabled>
+                    Select or type...
+                  </option>
+                  {EQUIPMENT_TYPES.map((e) => (
+                    <option key={e} value={e}>
+                      {e}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </>
         )}
 
-        {tab === "heavy" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 text-slate-700 font-semibold">
-                <Ruler className="w-4 h-4 text-brand-600" />
-                Load dimensions
+        {/* TAB 2 — Dimensions */}
+        {active === "dimensions" && (
+          <>
+            <div className="mt-5">
+              <label className="form-label">
+                Description <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                required
+                rows={4}
+                maxLength={1500}
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
+                className="form-textarea"
+                placeholder="Describe the load so the saved quote and booking screens label it correctly."
+              />
+              <div className="text-right text-xs text-slate-400 mt-1">{desc.length}/1500</div>
+            </div>
+
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-600">Length units:</span>
+                {(["ft+in", "in", "ft", "m", "mm"] as const).map((u) => (
+                  <button
+                    key={u}
+                    type="button"
+                    onClick={() => setLengthUnit(u)}
+                    className={`text-xs font-bold px-3 py-1.5 rounded-md border ${
+                      lengthUnit === u
+                        ? "bg-brand-600 text-white border-brand-600"
+                        : "bg-white text-slate-700 border-slate-300 hover:border-brand-400"
+                    }`}
+                  >
+                    {u}
+                  </button>
+                ))}
               </div>
-              <div className="grid grid-cols-3 gap-3">
-                <div>
-                  <label className="form-label">Length (ft)</label>
-                  <input value={hh.length} onChange={(e) => setHh({ ...hh, length: e.target.value })} className="form-input" placeholder="48" />
-                </div>
-                <div>
-                  <label className="form-label">Width (ft)</label>
-                  <input value={hh.width} onChange={(e) => setHh({ ...hh, width: e.target.value })} className="form-input" placeholder="10" />
-                </div>
-                <div>
-                  <label className="form-label">Height (ft)</label>
-                  <input value={hh.height} onChange={(e) => setHh({ ...hh, height: e.target.value })} className="form-input" placeholder="13.5" />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="form-label">Total Weight (lbs)</label>
-                  <input value={hh.weight} onChange={(e) => setHh({ ...hh, weight: e.target.value })} className="form-input" placeholder="85,000" />
-                </div>
-                <div>
-                  <label className="form-label">Miles</label>
-                  <input value={hh.miles} onChange={(e) => setHh({ ...hh, miles: e.target.value })} className="form-input" placeholder="850" />
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                <div>
-                  <label className="form-label">Axles</label>
-                  <select value={hh.axles} onChange={(e) => setHh({ ...hh, axles: e.target.value })} className="form-select">
-                    {[8,9,10,11,12,13,14,15,16].map((a) => <option key={a} value={a}>{a}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label className="form-label">Permit States</label>
-                  <input value={hh.permitStates} onChange={(e) => setHh({ ...hh, permitStates: e.target.value })} className="form-input" placeholder="2" />
-                </div>
-                <div>
-                  <label className="form-label">Pilot Cars</label>
-                  <select value={hh.pilots} onChange={(e) => setHh({ ...hh, pilots: e.target.value })} className="form-select">
-                    {[0,1,2,3,4].map((a) => <option key={a} value={a}>{a}</option>)}
-                  </select>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="form-label">Your Name</label>
-                  <input required className="form-input" />
-                </div>
-                <div>
-                  <label className="form-label">Phone</label>
-                  <input required type="tel" className="form-input" />
-                </div>
-                <div className="col-span-2">
-                  <label className="form-label">Email</label>
-                  <input required type="email" className="form-input" />
-                </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-600">Weight:</span>
+                {(["lb", "kg"] as const).map((u) => (
+                  <button
+                    key={u}
+                    type="button"
+                    onClick={() => setWeightUnit(u)}
+                    className={`text-xs font-bold px-3 py-1.5 rounded-md border ${
+                      weightUnit === u
+                        ? "bg-brand-600 text-white border-brand-600"
+                        : "bg-white text-slate-700 border-slate-300 hover:border-brand-400"
+                    }`}
+                  >
+                    {u}
+                  </button>
+                ))}
               </div>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 self-start">
-              <div className="flex items-center gap-2 text-slate-700 font-semibold">
-                <Calculator className="w-4 h-4 text-brand-600" />
-                Live heavy-haul estimate
-              </div>
-              <p className="text-xs text-slate-500 mt-1">
-                Indicative range only — final binding rate quoted after route survey and permit confirmation.
-              </p>
-              <div className="mt-4 space-y-2 text-sm">
-                <Row label="Line haul" value={heavyEstimate?.linehaul} />
-                <Row label="Fuel" value={heavyEstimate?.fuel} />
-                <Row label="Permits" value={heavyEstimate?.permits} />
-                <Row label="Pilot cars" value={heavyEstimate?.pilotCost} />
-                <div className="border-t border-slate-200 pt-3 mt-3 flex justify-between">
-                  <span className="font-bold text-slate-900">Estimated total</span>
-                  <span className="font-display font-extrabold text-2xl brand-gradient-text">
-                    {heavyEstimate ? formatCurrency(heavyEstimate.total) : "—"}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+              <DimField label="Length" unit={lengthUnit} required />
+              <DimField label="Width" unit={lengthUnit} required />
+              <DimField label="Height" unit={lengthUnit} required />
+              <div>
+                <label className="form-label">
+                  Weight <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <input required className="form-input pr-10" placeholder="" />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+                    {weightUnit}
                   </span>
                 </div>
               </div>
-              <div className="mt-4 text-xs text-slate-500">
-                Includes line haul, fuel, permit fees and pilot escort. Excludes detention, layover, lumper and tarp fees.
-              </div>
             </div>
+          </>
+        )}
+
+        {/* TAB 3 — Description */}
+        {active === "description" && (
+          <>
+            <div className="mt-6 rounded-xl bg-slate-50 border border-slate-200 p-4 text-sm text-slate-700">
+              <p>List each item with dimensions and weight, plus any loading or handling details.</p>
+              <p className="mt-1">
+                For multi-stop shipments, note where each item is picked up or delivered.
+              </p>
+            </div>
+
+            <div className="mt-5">
+              <label className="form-label">
+                Shipment description <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                required
+                rows={8}
+                maxLength={1500}
+                value={pieces}
+                onChange={(e) => setPieces(e.target.value)}
+                className="form-textarea"
+                placeholder="Enter each piece on a new line..."
+              />
+              <div className="text-right text-xs text-slate-400 mt-1">{pieces.length}/1500</div>
+            </div>
+          </>
+        )}
+
+        {/* Contact (all tabs) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 pt-6 border-t border-slate-200">
+          <div>
+            <label className="form-label">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input required type="email" className="form-input" placeholder="name@company.com" />
+          </div>
+          <div>
+            <label className="form-label">
+              Phone number <span className="text-red-500">*</span>
+            </label>
+            <input required type="tel" className="form-input" placeholder="(555) 555-5555" />
+          </div>
+          <p className="md:col-span-2 text-xs text-slate-500 -mt-2">
+            Email and phone are required before generating a rate.
+          </p>
+        </div>
+
+        {/* Equipment type quick chip for non-lookup tabs */}
+        {active !== "lookup" && (
+          <div className="mt-5">
+            <label className="form-label">Equipment / Trailer Type</label>
+            <select className="form-select" defaultValue="">
+              <option value="">Select equipment (optional)</option>
+              {services.map((s) => (
+                <option key={s.slug} value={s.slug}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
           </div>
         )}
 
-        <button disabled={busy} className="btn-primary mt-6 w-full md:w-auto px-10">
-          {busy ? "Sending..." : tab === "heavy" ? "Request Heavy-Haul Quote" : "Request Freight Quote"}
+        <button disabled={busy} className="btn-primary mt-7 w-full md:w-auto px-12 py-4">
+          {busy ? "Calculating..." : "Calculate"}
         </button>
+        <p className="mt-3 text-xs text-slate-500">
+          Need multiple pieces, extra stops, or manual specs? Call dispatch at{" "}
+          <strong>855-456-4424</strong>.
+        </p>
       </form>
     </div>
   );
 }
 
-function Row({ label, value }: { label: string; value: number | undefined }) {
+function DimField({
+  label,
+  unit,
+  required,
+}: {
+  label: string;
+  unit: "ft+in" | "in" | "ft" | "m" | "mm";
+  required?: boolean;
+}) {
+  if (unit === "ft+in") {
+    return (
+      <div>
+        <label className="form-label">
+          {label} {required && <span className="text-red-500">*</span>}
+        </label>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="relative">
+            <input required={required} className="form-input pr-8" placeholder="Ft" />
+            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+              ft
+            </span>
+          </div>
+          <div className="relative">
+            <input className="form-input pr-8" placeholder="In" />
+            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+              in
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className="flex justify-between text-slate-700">
-      <span>{label}</span>
-      <span className="font-semibold">{value ? formatCurrency(value) : "—"}</span>
+    <div>
+      <label className="form-label">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <div className="relative">
+        <input required={required} className="form-input pr-10" placeholder="" />
+        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
+          {unit}
+        </span>
+      </div>
     </div>
   );
-}
-
-function formatCurrency(n: number) {
-  return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }

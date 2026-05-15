@@ -11,7 +11,7 @@ type Props = {
 };
 
 function parseNumber(v: string) {
-  const m = v.match(/[\d.]+/);
+  const m = v.replace(/,/g, "").match(/[\d.]+/);
   return m ? parseFloat(m[0]) : 0;
 }
 

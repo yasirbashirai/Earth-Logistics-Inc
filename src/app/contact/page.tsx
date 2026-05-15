@@ -7,7 +7,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Contact Earth Logistics Inc — 24/7 Freight Dispatch",
   description:
-    "Reach Earth Logistics dispatch 24/7 at 855-456-4424 or info@earthlogistics247.com. Headquartered in Saint John, Indiana.",
+    "Reach Earth Logistics dispatch 24/7 at 855-456-4424 or info@ajearthlogistics.com. Headquartered in Saint John, Indiana.",
   path: "/contact",
 });
 
@@ -40,17 +40,6 @@ export default function ContactPage() {
               <p className="text-sm text-blue-100 mt-2">For after-hours loads, lost-load recovery and roadside emergencies, call dispatch directly — a real person will answer.</p>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-slate-200">
-              <iframe
-                src="https://www.google.com/maps?q=9401+Iris+St,+Saint+John,+IN+46373&output=embed"
-                width="100%"
-                height="280"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                aria-label="Earth Logistics Headquarters Map"
-              />
-            </div>
           </div>
 
           <div className="lg:col-span-7">

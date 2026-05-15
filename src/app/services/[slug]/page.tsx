@@ -81,11 +81,24 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
             <div className="mt-8">
               <h3 className="font-display font-bold text-xl text-brand-900">Industries we serve with {s.name.toLowerCase()}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {s.industries.map((i) => (
-                  <span key={i} className="text-xs bg-brand-50 text-brand-700 font-semibold px-3 py-1.5 rounded-full border border-brand-100">{i}</span>
-                ))}
-              </div>
+              {s.industries.length > 10 ? (
+                <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 text-sm text-slate-700">
+                    {s.industries.map((i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-brand-600 mt-0.5 shrink-0" />
+                        <span>{i}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {s.industries.map((i) => (
+                    <span key={i} className="text-xs bg-brand-50 text-brand-700 font-semibold px-3 py-1.5 rounded-full border border-brand-100">{i}</span>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="mt-10">

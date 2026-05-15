@@ -21,7 +21,7 @@ export default function CoveragePage() {
         eyebrow="Coverage"
         title="48-state freight coverage. Midwest core."
         subtitle="Headquartered at the Midwest freight crossroads in Saint John, Indiana — with deep capacity across every major US freight corridor."
-        image="https://images.unsplash.com/photo-1651928977880-ffb2d963b6b4?auto=format&fit=crop&w=1800&q=80"
+        image="/trucks/truck-3.jpg"
         cta1={{ label: "Quote a Lane", href: "/quote" }}
       />
 
@@ -64,17 +64,6 @@ export default function CoveragePage() {
 
           <aside className="lg:col-span-4 lg:sticky lg:top-32 self-start space-y-6">
             <QuoteFormCompact />
-            <div className="rounded-2xl overflow-hidden border border-slate-200">
-              <iframe
-                src="https://www.google.com/maps?q=Saint+John,+IN&output=embed"
-                width="100%"
-                height="280"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                aria-label="Earth Logistics service area map"
-              />
-            </div>
           </aside>
         </div>
       </section>

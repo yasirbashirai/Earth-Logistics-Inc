@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import QuoteFormFull from "@/components/QuoteFormFull";
 import TrustBar from "@/components/TrustBar";
-import StatsRow from "@/components/StatsRow";
+import { company } from "@/data/company";
 import { Clock, ShieldCheck, FileCheck2, BadgeCheck } from "lucide-react";
 import { pageMeta } from "@/lib/seo";
 
@@ -45,7 +45,14 @@ export default function QuotePage() {
               <a href="tel:18554564424" className="block mt-2 font-display font-extrabold text-3xl">855-456-4424</a>
               <div className="text-sm text-blue-100 mt-1">24 hours a day, 7 days a week.</div>
             </div>
-            <StatsRow />
+            <div className="rounded-2xl bg-white border border-slate-200 p-5 divide-y divide-slate-100">
+              {company.stats.map((s) => (
+                <div key={s.label} className="flex items-baseline justify-between gap-4 py-3 first:pt-0 last:pb-0">
+                  <span className="text-xs uppercase tracking-widest font-bold text-slate-500">{s.label}</span>
+                  <span className="font-display text-xl font-extrabold brand-gradient-text whitespace-nowrap">{s.value}</span>
+                </div>
+              ))}
+            </div>
           </aside>
         </div>
       </section>
