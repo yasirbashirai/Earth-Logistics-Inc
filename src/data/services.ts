@@ -56,7 +56,7 @@ export const services: Service[] = [
     blurb:
       "48' and 53' flatbed trailers with full tarping, strapping and chain capability for over-dimensional and industrial loads.",
     long: "When freight can't move under a roof, Earth Logistics ships it on an open deck. Our flatbed network covers standard flatbeds, step decks, stretch trailers and Conestoga curtain-side flats — fully tarped and strapped per FMCSA and shipper specs. We secure capacity for steel, lumber, construction materials, rooftop HVAC, industrial machinery and palletized building products.",
-    image: "/images/services/flatbed.jpg",
+    image: "/images/services/flatbed.png",
     category: "Specialized",
     capabilities: [
       "48' / 53' flatbed",
@@ -86,7 +86,7 @@ export const services: Service[] = [
     blurb:
       "53' multi-temp reefer trailers with continuous tracking, temperature monitoring and FSMA-compliant carriers.",
     long: "Earth Logistics ships food, beverage, produce, pharma and temperature-sensitive chemicals in 53' refrigerated trailers ranging from frozen (-10°F) to climate-controlled (+70°F). All reefer carriers meet FSMA and Sanitary Transportation Rule requirements, and continuous temperature monitoring is available for high-value loads.",
-    image: "/trucks/truck-4.jpg",
+    image: "/images/services/refrigerated.webp",
     category: "Van",
     capabilities: [
       "Frozen, refrigerated and climate-controlled",
