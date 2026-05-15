@@ -5,7 +5,7 @@ export type Service = {
   blurb: string;
   long: string;
   image: string;
-  category: "Van" | "Specialized" | "Bulk" | "Heavy" | "Hazmat";
+  category: "Van" | "Reefer" | "Specialized" | "Bulk" | "Heavy" | "Hazmat";
   capabilities: string[];
   industries: string[];
   faqs: { q: string; a: string }[];
@@ -86,8 +86,8 @@ export const services: Service[] = [
     blurb:
       "53' multi-temp reefer trailers with continuous tracking, temperature monitoring and FSMA-compliant carriers.",
     long: "Earth Logistics ships food, beverage, produce, pharma and temperature-sensitive chemicals in 53' refrigerated trailers ranging from frozen (-10°F) to climate-controlled (+70°F). All reefer carriers meet FSMA and Sanitary Transportation Rule requirements, and continuous temperature monitoring is available for high-value loads.",
-    image: "/images/services/refrigerated.webp",
-    category: "Van",
+    image: "/images/services/refrigerated.jpg",
+    category: "Reefer",
     capabilities: [
       "Frozen, refrigerated and climate-controlled",
       "FSMA compliant carriers",
