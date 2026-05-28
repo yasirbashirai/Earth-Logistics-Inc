@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/quote",
     "/contact",
     "/carriers",
+    "/carriers/onboarding",
     "/shippers",
     "/agents",
     "/industries",

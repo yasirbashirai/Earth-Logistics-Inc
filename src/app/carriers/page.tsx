@@ -1,9 +1,10 @@
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import JoinForm from "@/components/JoinForms";
 import SectionHeader from "@/components/SectionHeader";
 import CtaStrip from "@/components/CtaStrip";
 import TrustBar from "@/components/TrustBar";
-import { DollarSign, Clock, Award, Headphones, FileCheck2, Truck } from "lucide-react";
+import { DollarSign, Clock, Award, Headphones, FileCheck2, Truck, FileSignature, ArrowRight, ShieldCheck } from "lucide-react";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -34,6 +35,37 @@ export default function CarriersPage() {
 
       <TrustBar />
 
+      {/* Online onboarding banner */}
+      <section className="relative overflow-hidden brand-gradient-strong text-white">
+        <div className="absolute inset-0 opacity-15 bg-grid-dark pointer-events-none" />
+        <div className="container-page relative py-10 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur text-xs font-bold uppercase tracking-widest">
+              <FileSignature className="w-3.5 h-3.5" /> New — Online onboarding
+            </div>
+            <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-3 leading-tight">
+              Complete the full New Carrier Set-up packet & sign the Broker / Carrier Agreement online.
+            </h2>
+            <p className="text-blue-100 mt-2 max-w-2xl text-sm md:text-base">
+              No more PDFs, fax machines or emailed scans. Fill the set-up form, e-sign the agreement,
+              and we'll have you activated within 48 hours.
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-blue-100">
+              <span className="inline-flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5" /> Legally binding e-signature (ESIGN Act)</span>
+              <span className="opacity-50">·</span>
+              <span>Auto-saved as you type</span>
+              <span className="opacity-50">·</span>
+              <span>Printable signed copy</span>
+            </div>
+          </div>
+          <div className="md:col-span-4 flex md:justify-end">
+            <Link href="/carriers/onboarding" className="btn-primary text-base px-7 py-4 shine-on-hover bg-white !text-brand-700 hover:!text-brand-800">
+              Start Carrier Onboarding <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container-page grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
@@ -61,6 +93,14 @@ export default function CarriersPage() {
                 <li>• Signed broker-carrier agreement & W-9</li>
                 <li>• Factoring NOA (if applicable)</li>
               </ul>
+              <Link
+                href="/carriers/onboarding"
+                className="mt-6 inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-5 py-3 rounded-lg hover:bg-blue-50 shine-on-hover"
+              >
+                <FileSignature className="w-4 h-4" />
+                Open online onboarding packet
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 

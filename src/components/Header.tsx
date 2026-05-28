@@ -246,6 +246,7 @@ export default function Header() {
                     desc: "Run high-paying lanes with 24/7 dispatch and quick-pay options.",
                     href: "/carriers",
                     cta: "Become a Carrier",
+                    secondary: { label: "Online onboarding & e-sign", href: "/carriers/onboarding" },
                   },
                   {
                     icon: Briefcase,
@@ -255,21 +256,33 @@ export default function Header() {
                     cta: "Apply as Agent",
                   },
                 ].map((p) => (
-                  <Link
-                    key={p.label}
-                    href={p.href}
-                    onClick={() => setOpenMega(null)}
-                    className="group block p-6 rounded-xl hover:bg-brand-50 transition"
-                  >
-                    <div className="w-12 h-12 brand-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
-                      <p.icon className="w-6 h-6" />
-                    </div>
-                    <h4 className="font-display font-extrabold text-lg text-brand-900 mt-4">{p.label}</h4>
-                    <p className="text-sm text-slate-600 mt-1">{p.desc}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 group-hover:gap-2.5 transition-all">
-                      {p.cta} <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Link>
+                  <div key={p.label} className="p-2">
+                    <Link
+                      href={p.href}
+                      onClick={() => setOpenMega(null)}
+                      className="group block p-5 rounded-xl hover:bg-brand-50 transition"
+                    >
+                      <div className="w-12 h-12 brand-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
+                        <p.icon className="w-6 h-6" />
+                      </div>
+                      <h4 className="font-display font-extrabold text-lg text-brand-900 mt-4">{p.label}</h4>
+                      <p className="text-sm text-slate-600 mt-1">{p.desc}</p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 group-hover:gap-2.5 transition-all">
+                        {p.cta} <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
+                    {"secondary" in p && p.secondary && (
+                      <Link
+                        href={p.secondary.href}
+                        onClick={() => setOpenMega(null)}
+                        className="mx-5 mt-1 mb-2 flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 group/sub"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        {p.secondary.label}
+                        <ArrowRight className="w-3 h-3 group-hover/sub:translate-x-0.5 transition" />
+                      </Link>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -331,6 +344,9 @@ export default function Header() {
                               </Link>
                               <Link href="/carriers" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm text-slate-700 hover:bg-white">
                                 <Truck className="w-4 h-4 text-brand-600" /> Carriers
+                              </Link>
+                              <Link href="/carriers/onboarding" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-6 py-2 rounded-md text-xs font-bold text-emerald-700 hover:bg-white">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Online onboarding & e-sign
                               </Link>
                               <Link href="/agents" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm text-slate-700 hover:bg-white">
                                 <Briefcase className="w-4 h-4 text-brand-600" /> Freight Agents
