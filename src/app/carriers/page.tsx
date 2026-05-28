@@ -4,7 +4,7 @@ import JoinForm from "@/components/JoinForms";
 import SectionHeader from "@/components/SectionHeader";
 import CtaStrip from "@/components/CtaStrip";
 import TrustBar from "@/components/TrustBar";
-import { DollarSign, Clock, Award, Headphones, FileCheck2, Truck, FileSignature, ArrowRight, ShieldCheck } from "lucide-react";
+import { DollarSign, Clock, Award, Headphones, FileCheck2, Truck, FileSignature, ArrowRight, ShieldCheck, FileDown } from "lucide-react";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -58,10 +58,26 @@ export default function CarriersPage() {
               <span>Printable signed copy</span>
             </div>
           </div>
-          <div className="md:col-span-4 flex md:justify-end">
+          <div className="md:col-span-4 flex flex-col md:items-end gap-3">
             <Link href="/carriers/onboarding" className="btn-primary text-base px-7 py-4 shine-on-hover bg-white !text-brand-700 hover:!text-brand-800">
               Start Carrier Onboarding <ArrowRight className="w-5 h-5" />
             </Link>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <a
+                href="/forms/Earth-Logistics-New-Carrier-Setup-Form.pdf"
+                download
+                className="inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-bold border border-white/30 hover:border-white/60 px-3 py-1.5 rounded-md transition"
+              >
+                <FileDown className="w-3.5 h-3.5" /> Set-up Form (PDF)
+              </a>
+              <a
+                href="/forms/Earth-Logistics-Broker-Carrier-Agreement.pdf"
+                download
+                className="inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-bold border border-white/30 hover:border-white/60 px-3 py-1.5 rounded-md transition"
+              >
+                <FileDown className="w-3.5 h-3.5" /> Agreement (PDF)
+              </a>
+            </div>
           </div>
         </div>
       </section>
