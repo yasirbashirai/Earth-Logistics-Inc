@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Search, Ruler, FileText } from "lucide-react";
+import { CheckCircle2, Search, Ruler, FileText, AlertCircle } from "lucide-react";
 import { services } from "@/data/services";
+import { submitForm, formToObject } from "@/lib/forms";
 
 type TabId = "lookup" | "dimensions" | "description";
 
@@ -37,6 +38,7 @@ export default function QuoteFormFull() {
   const [active, setActive] = useState<TabId>("lookup");
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Tab 2 unit toggles
   const [lengthUnit, setLengthUnit] = useState<"ft+in" | "in" | "ft" | "m" | "mm">("ft+in");
@@ -46,13 +48,22 @@ export default function QuoteFormFull() {
   const [desc, setDesc] = useState("");
   const [pieces, setPieces] = useState("");
 
-  function submit(e: React.FormEvent<HTMLFormElement>) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setBusy(true);
-    setTimeout(() => {
-      setBusy(false);
+    setError(null);
+    const res = await submitForm("quote", {
+      formType: `Full quote calculator — ${active}`,
+      lengthUnit,
+      weightUnit,
+      ...formToObject(e.currentTarget),
+    });
+    setBusy(false);
+    if (res.ok) {
       setSubmitted(true);
-    }, 900);
+    } else {
+      setError(res.error || "Something went wrong. Please call 855-456-4424.");
+    }
   }
 
   if (submitted) {
@@ -127,19 +138,22 @@ export default function QuoteFormFull() {
         onSubmit={submit}
         className="rounded-2xl bg-white shadow-xl border border-slate-200 p-6 md:p-8"
       >
+        {/* Honeypot */}
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
         {/* Pickup + Delivery (all tabs) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="form-label">
               Pickup location <span className="text-red-500">*</span>
             </label>
-            <input required className="form-input" placeholder="Business, city, or ZIP" />
+            <input name="pickup" required className="form-input" placeholder="Business, city, or ZIP" />
           </div>
           <div>
             <label className="form-label">
               Delivery location <span className="text-red-500">*</span>
             </label>
-            <input required className="form-input" placeholder="Business, city, or ZIP" />
+            <input name="delivery" required className="form-input" placeholder="Business, city, or ZIP" />
           </div>
         </div>
 
@@ -151,7 +165,7 @@ export default function QuoteFormFull() {
                 <label className="form-label">
                   Make <span className="text-red-500">*</span>
                 </label>
-                <select required className="form-select" defaultValue="">
+                <select name="make" required className="form-select" defaultValue="">
                   <option value="" disabled>
                     Select or type...
                   </option>
@@ -166,13 +180,13 @@ export default function QuoteFormFull() {
                 <label className="form-label">
                   Model <span className="text-red-500">*</span>
                 </label>
-                <input required className="form-input" placeholder="Select or type..." />
+                <input name="model" required className="form-input" placeholder="Select or type..." />
               </div>
               <div>
                 <label className="form-label">
                   Equipment Type <span className="text-red-500">*</span>
                 </label>
-                <select required className="form-select" defaultValue="">
+                <select name="equipmentType" required className="form-select" defaultValue="">
                   <option value="" disabled>
                     Select or type...
                   </option>
@@ -195,6 +209,7 @@ export default function QuoteFormFull() {
                 Description <span className="text-red-500">*</span>
               </label>
               <textarea
+                name="description"
                 required
                 rows={4}
                 maxLength={1500}
@@ -244,15 +259,15 @@ export default function QuoteFormFull() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-              <DimField label="Length" unit={lengthUnit} required />
-              <DimField label="Width" unit={lengthUnit} required />
-              <DimField label="Height" unit={lengthUnit} required />
+              <DimField name="length" label="Length" unit={lengthUnit} required />
+              <DimField name="width" label="Width" unit={lengthUnit} required />
+              <DimField name="height" label="Height" unit={lengthUnit} required />
               <div>
                 <label className="form-label">
                   Weight <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <input required className="form-input pr-10" placeholder="" />
+                  <input name="weight" required className="form-input pr-10" placeholder="" />
                   <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
                     {weightUnit}
                   </span>
@@ -277,6 +292,7 @@ export default function QuoteFormFull() {
                 Shipment description <span className="text-red-500">*</span>
               </label>
               <textarea
+                name="description"
                 required
                 rows={8}
                 maxLength={1500}
@@ -296,13 +312,13 @@ export default function QuoteFormFull() {
             <label className="form-label">
               Email <span className="text-red-500">*</span>
             </label>
-            <input required type="email" className="form-input" placeholder="name@company.com" />
+            <input name="email" required type="email" className="form-input" placeholder="name@company.com" />
           </div>
           <div>
             <label className="form-label">
               Phone number <span className="text-red-500">*</span>
             </label>
-            <input required type="tel" className="form-input" placeholder="(555) 555-5555" />
+            <input name="phone" required type="tel" className="form-input" placeholder="(555) 555-5555" />
           </div>
           <p className="md:col-span-2 text-xs text-slate-500 -mt-2">
             Email and phone are required before generating a rate.
@@ -313,14 +329,21 @@ export default function QuoteFormFull() {
         {active !== "lookup" && (
           <div className="mt-5">
             <label className="form-label">Equipment / Trailer Type</label>
-            <select className="form-select" defaultValue="">
+            <select name="equipment" className="form-select" defaultValue="">
               <option value="">Select equipment (optional)</option>
               {services.map((s) => (
-                <option key={s.slug} value={s.slug}>
+                <option key={s.slug} value={s.name}>
                   {s.name}
                 </option>
               ))}
             </select>
+          </div>
+        )}
+
+        {error && (
+          <div className="mt-5 flex items-start gap-2 rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+            <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+            <span>{error}</span>
           </div>
         )}
 
@@ -337,10 +360,12 @@ export default function QuoteFormFull() {
 }
 
 function DimField({
+  name,
   label,
   unit,
   required,
 }: {
+  name: string;
   label: string;
   unit: "ft+in" | "in" | "ft" | "m" | "mm";
   required?: boolean;
@@ -353,13 +378,13 @@ function DimField({
         </label>
         <div className="grid grid-cols-2 gap-2">
           <div className="relative">
-            <input required={required} className="form-input pr-8" placeholder="Ft" />
+            <input name={`${name}Ft`} required={required} className="form-input pr-8" placeholder="Ft" />
             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
               ft
             </span>
           </div>
           <div className="relative">
-            <input className="form-input pr-8" placeholder="In" />
+            <input name={`${name}In`} className="form-input pr-8" placeholder="In" />
             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
               in
             </span>
@@ -374,7 +399,7 @@ function DimField({
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div className="relative">
-        <input required={required} className="form-input pr-10" placeholder="" />
+        <input name={name} required={required} className="form-input pr-10" placeholder="" />
         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-500">
           {unit}
         </span>

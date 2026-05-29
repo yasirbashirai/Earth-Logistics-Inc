@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, AlertCircle } from "lucide-react";
+import { submitForm, formToObject } from "@/lib/forms";
 
 type Variant = "carrier" | "shipper" | "agent";
 
@@ -64,19 +65,33 @@ const headlines: Record<Variant, { title: string; subtitle: string }> = {
   },
 };
 
+const variantLabels: Record<Variant, string> = {
+  carrier: "Carrier application",
+  shipper: "Shipper setup request",
+  agent: "Freight agent application",
+};
+
 export default function JoinForm({ variant }: { variant: Variant }) {
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const cfg = fields[variant];
   const head = headlines[variant];
 
-  function submit(e: React.FormEvent<HTMLFormElement>) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setBusy(true);
-    setTimeout(() => {
-      setBusy(false);
+    setError(null);
+    const res = await submitForm("apply", {
+      formType: variantLabels[variant],
+      ...formToObject(e.currentTarget),
+    });
+    setBusy(false);
+    if (res.ok) {
       setSubmitted(true);
-    }, 800);
+    } else {
+      setError(res.error || "Something went wrong. Please call 855-456-4424.");
+    }
   }
 
   if (submitted) {
@@ -95,23 +110,31 @@ export default function JoinForm({ variant }: { variant: Variant }) {
     <form onSubmit={submit} className="rounded-2xl bg-white p-6 md:p-8 shadow-xl border border-slate-200">
       <h3 className="font-display text-2xl md:text-3xl font-extrabold text-brand-900">{head.title}</h3>
       <p className="text-slate-600 mt-1">{head.subtitle}</p>
+      {/* Honeypot */}
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         {cfg.map((f) => (
           <div key={f.name} className={f.full ? "md:col-span-2" : ""}>
             <label className="form-label">{f.label}{f.required ? " *" : ""}</label>
             {f.options ? (
-              <select required={f.required} className="form-select" defaultValue="">
+              <select name={f.name} required={f.required} className="form-select" defaultValue="">
                 <option value="" disabled>Select</option>
                 {f.options.map((o) => <option key={o}>{o}</option>)}
               </select>
             ) : f.full ? (
-              <textarea required={f.required} className="form-textarea" rows={3} />
+              <textarea name={f.name} required={f.required} className="form-textarea" rows={3} />
             ) : (
-              <input required={f.required} type={f.type || "text"} className="form-input" />
+              <input name={f.name} required={f.required} type={f.type || "text"} className="form-input" />
             )}
           </div>
         ))}
       </div>
+      {error && (
+        <div className="mt-5 flex items-start gap-2 rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+          <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+          <span>{error}</span>
+        </div>
+      )}
       <button disabled={busy} className="btn-primary mt-6 w-full md:w-auto px-10">
         {busy ? "Submitting..." : "Submit Application"}
       </button>

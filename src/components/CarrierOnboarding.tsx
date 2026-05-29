@@ -127,7 +127,10 @@ const initialState = (): OnboardingState => ({
 
 const STORAGE_KEY = "eli_carrier_onboarding_v1";
 
-const SUBMIT_ENDPOINT = process.env.NEXT_PUBLIC_CARRIER_ONBOARDING_ENDPOINT || "";
+// Posts to the PHP mail handler shipped in /api on the production server.
+// A pre-filled mailto: still fires automatically if the POST ever fails.
+const SUBMIT_ENDPOINT =
+  process.env.NEXT_PUBLIC_CARRIER_ONBOARDING_ENDPOINT || "/api/carrier.php";
 
 // ---------------------------------------------------------------------------
 // Component
