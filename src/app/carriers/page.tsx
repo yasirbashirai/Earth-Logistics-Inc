@@ -77,6 +77,27 @@ export default function CarriersPage() {
               >
                 <FileDown className="w-3.5 h-3.5" /> Agreement (PDF)
               </a>
+              <a
+                href="/forms/Earth-Logistics-W9-Form.pdf"
+                download
+                className="inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-bold border border-white/30 hover:border-white/60 px-3 py-1.5 rounded-md transition"
+              >
+                <FileDown className="w-3.5 h-3.5" /> W-9 Form (PDF)
+              </a>
+              <a
+                href="/forms/Earth-Logistics-Workers-Comp-Waiver.pdf"
+                download
+                className="inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-bold border border-white/30 hover:border-white/60 px-3 py-1.5 rounded-md transition"
+              >
+                <FileDown className="w-3.5 h-3.5" /> Workers' Comp Waiver (PDF)
+              </a>
+              <a
+                href="/forms/Earth-Logistics-New-Carrier-Packet.pdf"
+                download
+                className="inline-flex items-center gap-1.5 text-blue-100 hover:text-white font-bold border border-white/30 hover:border-white/60 px-3 py-1.5 rounded-md transition"
+              >
+                <FileDown className="w-3.5 h-3.5" /> Full Packet (PDF)
+              </a>
             </div>
           </div>
         </div>

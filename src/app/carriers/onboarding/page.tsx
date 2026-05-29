@@ -34,6 +34,24 @@ const PDF_FORMS = [
     desc: "Full 12-section agreement — read, sign, and return.",
     size: "8.0 MB · 6 pages",
   },
+  {
+    href: "/forms/Earth-Logistics-W9-Form.pdf",
+    title: "IRS Form W-9",
+    desc: "Request for Taxpayer Identification Number & Certification.",
+    size: "1.0 MB · 1 page",
+  },
+  {
+    href: "/forms/Earth-Logistics-Workers-Comp-Waiver.pdf",
+    title: "Worker's Compensation Waiver",
+    desc: "Required where your company does not carry Workers' Comp.",
+    size: "0.5 MB · 1 page",
+  },
+  {
+    href: "/forms/Earth-Logistics-New-Carrier-Packet.pdf",
+    title: "Full New Carrier Packet",
+    desc: "Everything in one file — checklist, W-9 & Workers' Comp waiver.",
+    size: "1.9 MB · 3 pages",
+  },
 ];
 
 export default function CarrierOnboardingPage() {
